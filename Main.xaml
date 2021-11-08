@@ -1087,15 +1087,15 @@
         </State.Transitions>
       </State>
       <x:Reference>__ReferenceID1</x:Reference>
-      <State x:Name="__ReferenceID4" DisplayName="State - Init" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_4">
+      <State x:Name="__ReferenceID4" DisplayName="State - Init" sap:VirtualizedContainerService.HintSize="1405,1681" sap2010:WorkflowViewState.IdRef="State_4">
         <State.Entry>
-          <Sequence sap:VirtualizedContainerService.HintSize="1341,1317" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence sap:VirtualizedContainerService.HintSize="1359,1317" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="1299,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign sap:VirtualizedContainerService.HintSize="1317,60" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Boolean">
                   <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_31">bRequest</CSharpReference>
@@ -1107,7 +1107,7 @@
                 </InArgument>
               </Assign.Value>
             </Assign>
-            <ui:FileExistsX DisplayName="File Exists" sap:VirtualizedContainerService.HintSize="1299,134" sap2010:WorkflowViewState.IdRef="FileExistsX_1">
+            <ui:FileExistsX DisplayName="File Exists" sap:VirtualizedContainerService.HintSize="1317,134" sap2010:WorkflowViewState.IdRef="FileExistsX_1">
               <ui:FileExistsX.Exists>
                 <OutArgument x:TypeArguments="x:Boolean">
                   <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_34">bExistFile</CSharpReference>
@@ -1115,18 +1115,18 @@
               </ui:FileExistsX.Exists>
               <ui:FileExistsX.Path>
                 <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">Directory.GetCurrentDirectory() + "iNumber.txt";</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">Directory.GetCurrentDirectory() + "\\iNumber.txt";</CSharpValue>
                 </InArgument>
               </ui:FileExistsX.Path>
             </ui:FileExistsX>
-            <If sap:VirtualizedContainerService.HintSize="1299,479" sap2010:WorkflowViewState.IdRef="If_6">
+            <If sap:VirtualizedContainerService.HintSize="1317,479" sap2010:WorkflowViewState.IdRef="If_6">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">bExistFile</CSharpValue>
                 </InArgument>
               </If.Condition>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="242,84" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                <Sequence sap:VirtualizedContainerService.HintSize="636,84" sap2010:WorkflowViewState.IdRef="Sequence_19">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1135,20 +1135,20 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,319" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                <Sequence sap:VirtualizedContainerService.HintSize="636,319" sap2010:WorkflowViewState.IdRef="Sequence_20">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:CreateFile ContinueOnError="{x:Null}" DisplayName="Create File" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="CreateFile_1" Name="iNumber.txt">
+                  <ui:CreateFile ContinueOnError="{x:Null}" DisplayName="Create File" sap:VirtualizedContainerService.HintSize="594,134" sap2010:WorkflowViewState.IdRef="CreateFile_1" Name="iNumber.txt">
                     <ui:CreateFile.Path>
                       <InArgument x:TypeArguments="x:String">
                         <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">Directory.GetCurrentDirectory();</CSharpValue>
                       </InArgument>
                     </ui:CreateFile.Path>
                   </ui:CreateFile>
-                  <Delay sap2010:Annotation.AnnotationText="1s" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="334,53" sap2010:WorkflowViewState.IdRef="Delay_9">
+                  <Delay sap2010:Annotation.AnnotationText="1s" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="594,53" sap2010:WorkflowViewState.IdRef="Delay_9">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -1158,14 +1158,14 @@
                 </Sequence>
               </If.Else>
             </If>
-            <ui:ReadTextFile DisplayName="Read Text File" FileName="iNumber.txt" sap:VirtualizedContainerService.HintSize="1299,80" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
+            <ui:ReadTextFile DisplayName="Read Text File" FileName="iNumber.txt" sap:VirtualizedContainerService.HintSize="1317,80" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
               <ui:ReadTextFile.Content>
                 <OutArgument x:TypeArguments="x:String">
                   <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">strNumber</CSharpReference>
                 </OutArgument>
               </ui:ReadTextFile.Content>
             </ui:ReadTextFile>
-            <If sap:VirtualizedContainerService.HintSize="1299,312" sap2010:WorkflowViewState.IdRef="If_3">
+            <If sap:VirtualizedContainerService.HintSize="1317,312" sap2010:WorkflowViewState.IdRef="If_3">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">strNumber.Equals("")</CSharpValue>
