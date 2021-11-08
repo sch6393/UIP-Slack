@@ -642,21 +642,21 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <Transition.To>
-                              <State x:Name="__ReferenceID3" DisplayName="State - Add Calendar" sap:VirtualizedContainerService.HintSize="961,4011" sap2010:WorkflowViewState.IdRef="State_6">
+                              <State x:Name="__ReferenceID3" DisplayName="State - Add Calendar" sap:VirtualizedContainerService.HintSize="170,61" sap2010:WorkflowViewState.IdRef="State_6">
                                 <State.Entry>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="915,3647" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="915,3651" sap2010:WorkflowViewState.IdRef="Sequence_12">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="873,3555" sap2010:WorkflowViewState.IdRef="OpenBrowser_2">
+                                    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="873,3559" sap2010:WorkflowViewState.IdRef="OpenBrowser_2">
                                       <ui:OpenBrowser.Body>
                                         <ActivityAction x:TypeArguments="x:Object">
                                           <ActivityAction.Argument>
                                             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                           </ActivityAction.Argument>
-                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="839,3453" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="839,3457" sap2010:WorkflowViewState.IdRef="Sequence_11">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -668,7 +668,7 @@
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:UiElementExists sap2010:Annotation.AnnotationText="5s" DisplayName="要素の存在を確認 'DIV'" sap:VirtualizedContainerService.HintSize="484,137" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                                              <ui:UiElementExists sap2010:Annotation.AnnotationText="10s" DisplayName="要素の存在を確認 'DIV'" sap:VirtualizedContainerService.HintSize="484,137" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
                                                 <ui:UiElementExists.Exists>
                                                   <OutArgument x:TypeArguments="x:Boolean">
                                                     <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_36">bGoogleUser</CSharpReference>
@@ -826,7 +826,7 @@
                                                 </ui:Target>
                                               </ui:SendHotkey.Target>
                                             </ui:SendHotkey>
-                                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey 'INPUT'" sap:VirtualizedContainerService.HintSize="797,152" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="v" KeyModifiers="Ctrl">
+                                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey 'INPUT'" sap:VirtualizedContainerService.HintSize="797,154" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="v" KeyModifiers="Ctrl">
                                               <ui:SendHotkey.Target>
                                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="97a90b2a-aed8-48f5-b5c9-33a17aebba66" InformativeScreenshot="b67a873127c3fc97d8c0bf1dd3fdc6fc" Selector="&lt;html app='chrome.exe' title='fk.cocone.co.jp - カレンダー - 予定の詳細' /&gt;&lt;webctrl tag='INPUT' type='text' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;label&amp;gt;div&amp;gt;div&amp;gt;input' /&gt;">
                                                   <ui:Target.TimeoutMS>
@@ -896,7 +896,7 @@
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                             </ui:UiElementExists>
-                                            <If sap:VirtualizedContainerService.HintSize="797,355" sap2010:WorkflowViewState.IdRef="If_4">
+                                            <If sap:VirtualizedContainerService.HintSize="797,357" sap2010:WorkflowViewState.IdRef="If_4">
                                               <If.Condition>
                                                 <InArgument x:TypeArguments="x:Boolean">
                                                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28">bSHC</CSharpValue>
