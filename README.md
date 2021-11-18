@@ -22,10 +22,13 @@ UIP-Slack
 
 ### Jobcan設定
 1. Jobcan　→　通知設定　→　チャットツール連携
-1. Slack通知設定：「通知設定する」をチャック
-1. Webhook URL：Slackで取得したWebhook URLを入力
-1. メンション設定：Slackで取得したチャンネルIDを入力
-1. 「Slackテスト通知」ボタンをクリックしてテスト
+1. 設定値を入力
+    ```
+    Slack通知設定 ：「通知設定する」をチャック
+    Webhook URL   ：Slackで取得したWebhook URL
+    メンション設定：Slackで取得したチャンネルID
+    ```
+1. 「Slackテスト通知」ボタンをクリックして受信確認
 
 <br>
 
