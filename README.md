@@ -16,7 +16,7 @@ UIP-Slack
 1. Slackに追加
 1. チャンネルを選択
 1. Webhook URL取得
-1. チャンネルIDはチャンネル詳細で取得
+1. 自分のプロフィールでメンバーIDを取得
 
 <br>
 
@@ -26,7 +26,7 @@ UIP-Slack
     ```
     Slack通知設定 ：「通知設定する」をチャック
     Webhook URL   ：Slackで取得したWebhook URL
-    メンション設定：Slackで取得したチャンネルID
+    メンション設定：Slackで取得した自分のメンバーID
     ```
 1. 「Slackテスト通知」ボタンをクリックして受信確認
 
