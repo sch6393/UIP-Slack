@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1208,889" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1182,947" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="36">
       <x:String>System.Activities</x:String>
@@ -689,7 +689,7 @@
                 <State.Entry>
                   <TryCatch DisplayName="トライ キャッチ" sap:VirtualizedContainerService.HintSize="438,391" sap2010:WorkflowViewState.IdRef="TryCatch_14">
                     <TryCatch.Try>
-                      <ui:InvokeCode ContinueOnError="{x:Null}" Code="// for (int i = 0; i &lt; strarrSlackText.Length; i++)&#xD;&#xA;// (2021.11.15) 7個がない時があるので計算方法を変更。&#xD;&#xA;&#xD;&#xA;// (2021.11.29) Jobcan申請番号が数字ではない場合。&#xD;&#xA;bPolice = false;&#xD;&#xA;&#xD;&#xA;int iValue = 0;&#xD;&#xA;for (int i = 0; i &lt; strarrSlackText.Length; i++)&#xD;&#xA;{&#xD;&#xA;&#x9;if (strarrSlackText[i] == null || strarrSlackText[i].Equals(&quot;&quot;))&#xD;&#xA;&#x9;{&#xD;&#xA;&#x9;&#x9;iValue = i;&#xD;&#xA;&#x9;&#x9;// Console.WriteLine(&quot;&quot; + iValue);&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;for (int i = iValue - 5; i &lt; iValue; i++)&#xD;&#xA;{&#xD;&#xA;&#x9;bool btmp = false;&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;// Check Request&#xD;&#xA;&#x9;if (strarrSlackText[i].Contains(&quot;申請の承認依頼が届いています。 &quot;))&#xD;&#xA;&#x9;{&#xD;&#xA;&#x9;&#x9;// Check Request Number&#xD;&#xA;&#x9;&#x9;int iIndexRequest = strarrSlackText[i].IndexOf(&quot;申請番号&quot;);&#xD;&#xA;&#x9;&#x9;// Console.WriteLine(&quot;&quot; + iIndexRequest);&#xD;&#xA;&#x9;&#x9;string strtmp = strarrSlackText[i].Substring(iIndexRequest + 5);&#xD;&#xA;&#x9;&#x9;// Console.WriteLine(&quot;&quot; + strtmp);&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;for (int j = 0; j &lt; strarrNumber.Length; j++)&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;// Console.WriteLine(&quot;strarrNumber: &quot; + strarrNumber[j]);&#xD;&#xA;&#x9;&#x9;&#x9;if (strarrNumber[j] == null || strarrNumber[j].Equals(&quot;&quot;))&#xD;&#xA;&#x9;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if (strarrNumber[j].Equals(strtmp))&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;btmp = true;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;if (btmp)&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;bRequest = false;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;bRequest = true;&#xD;&#xA;&#x9;&#x9;&#x9;int itmp = 0;&#xD;&#xA;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;try&#xD;&#xA;&#x9;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;itmp = int.Parse(strtmp);&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;catch (Exception ex)&#xD;&#xA;&#x9;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;bPolice = true;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;if (bPolice)&#xD;&#xA;&#x9;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;strNumber = strtmp;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;strNumber = itmp.ToString();&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;break;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;{&#xD;&#xA;&#x9;&#x9;bRequest = false;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_9" Language="CSharp">
+                      <ui:InvokeCode ContinueOnError="{x:Null}" Code="// for (int i = 0; i &lt; strarrSlackText.Length; i++)&#xA;// (2021.11.15) 7個がない時があるので計算方法を変更。&#xA;&#xA;// (2021.11.29) Jobcan申請番号が数字ではない場合。&#xA;bPolice = false;&#xA;&#xA;int iValue = 0;&#xA;for (int i = 0; i &lt; strarrSlackText.Length; i++)&#xA;{&#xA;&#x9;if (strarrSlackText[i] == null || strarrSlackText[i].Equals(&quot;&quot;))&#xA;&#x9;{&#xA;&#x9;&#x9;iValue = i;&#xA;&#x9;&#x9;// Console.WriteLine(&quot;&quot; + iValue);&#xA;&#x9;&#x9;break;&#xA;&#x9;}&#xA;}&#xA;&#xA;for (int i = iValue - 5; i &lt; iValue; i++)&#xA;{&#xA;&#x9;bool btmp = false;&#xA;&#x9;&#xA;&#x9;// Check Request&#xA;&#x9;if (strarrSlackText[i].Contains(&quot;申請の承認依頼が届いています。 &quot;))&#xA;&#x9;{&#xA;&#x9;&#x9;// Check Request Number&#xA;&#x9;&#x9;int iIndexRequest = strarrSlackText[i].IndexOf(&quot;申請番号&quot;);&#xA;&#x9;&#x9;// Console.WriteLine(&quot;&quot; + iIndexRequest);&#xA;&#x9;&#x9;string strtmp = strarrSlackText[i].Substring(iIndexRequest + 5);&#xA;&#x9;&#x9;// Console.WriteLine(&quot;&quot; + strtmp);&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;for (int j = 0; j &lt; strarrNumber.Length; j++)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;// Console.WriteLine(&quot;strarrNumber: &quot; + strarrNumber[j]);&#xA;&#x9;&#x9;&#x9;if (strarrNumber[j] == null || strarrNumber[j].Equals(&quot;&quot;))&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (strarrNumber[j].Equals(strtmp))&#xA;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;btmp = true;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;if (btmp)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;bRequest = false;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;bRequest = true;&#xA;&#x9;&#x9;&#x9;int itmp = 0;&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;try&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;itmp = int.Parse(strtmp);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;catch (Exception ex)&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;bPolice = true;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;if (bPolice)&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;strNumber = strtmp;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;strNumber = itmp.ToString();&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#x9;else&#xA;&#x9;{&#xA;&#x9;&#x9;bRequest = false;&#xA;&#x9;}&#xA;}&#xA;" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_9" Language="CSharp">
                         <ui:InvokeCode.Arguments>
                           <InOutArgument x:TypeArguments="s:String[]" x:Key="strarrSlackText">
                             <CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_136">strarrSlackText</CSharpReference>
@@ -791,15 +791,15 @@
                       <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_115">bRequest &amp;&amp; bPolice</CSharpValue>
                     </Transition.Condition>
                     <Transition.To>
-                      <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Jobcan申請番号が数字ではない場合。" DisplayName="ステート - Police" sap:VirtualizedContainerService.HintSize="726,3446" sap2010:WorkflowViewState.IdRef="State_7">
+                      <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Jobcan申請番号が数字ではない場合。" DisplayName="ステート - Police" sap:VirtualizedContainerService.HintSize="1231,3953" sap2010:WorkflowViewState.IdRef="State_7">
                         <State.Entry>
-                          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="680,3055" sap2010:WorkflowViewState.IdRef="Sequence_71">
+                          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="1185,3562" sap2010:WorkflowViewState.IdRef="Sequence_71">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:InvokeCode ContinueOnError="{x:Null}" Code="iIndex = 1;&#xD;&#xA;for (int i = 0; i &lt; strarrSlackText.Length; i++)&#xD;&#xA;{&#xD;&#xA;&#x9;if (strarrSlackText[i].Contains(strNumber))&#xD;&#xA;&#x9;{&#xD;&#xA;&#x9;&#x9;// Console.WriteLine(&quot;&quot; + iIndex);&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;iIndex++;&#xD;&#xA;}&#xD;&#xA;" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="638,164" sap2010:WorkflowViewState.IdRef="InvokeCode_6" Language="CSharp">
+                            <ui:InvokeCode ContinueOnError="{x:Null}" Code="iIndex = 1;&#xA;for (int i = 0; i &lt; strarrSlackText.Length; i++)&#xA;{&#xA;&#x9;if (strarrSlackText[i].Contains(strNumber))&#xA;&#x9;{&#xA;&#x9;&#x9;// Console.WriteLine(&quot;&quot; + iIndex);&#xA;&#x9;&#x9;break;&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;iIndex++;&#xA;}&#xA;" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="1143,164" sap2010:WorkflowViewState.IdRef="InvokeCode_6" Language="CSharp">
                               <ui:InvokeCode.Arguments>
                                 <InOutArgument x:TypeArguments="s:String[]" x:Key="strarrSlackText">
                                   <CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_115">strarrSlackText</CSharpReference>
@@ -812,7 +812,7 @@
                                 </InArgument>
                               </ui:InvokeCode.Arguments>
                             </ui:InvokeCode>
-                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="クリック 'link  詳細'" sap:VirtualizedContainerService.HintSize="638,106" sap2010:WorkflowViewState.IdRef="Click_32" KeyModifiers="None" MouseButton="BTN_LEFT">
+                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="クリック 'link  詳細'" sap:VirtualizedContainerService.HintSize="1143,106" sap2010:WorkflowViewState.IdRef="Click_32" KeyModifiers="None" MouseButton="BTN_LEFT">
                               <ui:Click.CursorPosition>
                                 <ui:CursorPosition Position="Center">
                                   <ui:CursorPosition.OffsetX>
@@ -839,26 +839,26 @@
                                 </ui:Target>
                               </ui:Click.Target>
                             </ui:Click>
-                            <Delay sap2010:Annotation.AnnotationText="2s" DisplayName="待機" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="638,53" sap2010:WorkflowViewState.IdRef="Delay_35">
+                            <Delay sap2010:Annotation.AnnotationText="2s" DisplayName="待機" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="1143,53" sap2010:WorkflowViewState.IdRef="Delay_35">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </Delay>
-                            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="ブラウザーにアタッチ 'chrome.exe  ジョブカン共通IDログ...'" sap:VirtualizedContainerService.HintSize="638,2520" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="0a407c05d12bdfccd497c5867ee8a635" Selector="&lt;html app='chrome.exe' title='ジョブカン*' /&gt;">
+                            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="ブラウザーにアタッチ 'chrome.exe  ジョブカン共通IDログ...'" sap:VirtualizedContainerService.HintSize="1143,3027" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="0a407c05d12bdfccd497c5867ee8a635" Selector="&lt;html app='chrome.exe' title='ジョブカン*' /&gt;">
                               <ui:BrowserScope.Body>
                                 <ActivityAction x:TypeArguments="x:Object">
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                   </ActivityAction.Argument>
-                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="604,2374" sap2010:WorkflowViewState.IdRef="Sequence_77">
+                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1109,2881" sap2010:WorkflowViewState.IdRef="Sequence_77">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:UiElementExists sap2010:Annotation.AnnotationText="10s" DisplayName="Element Exists 'document  ジョブカン共通IDログイン'" sap:VirtualizedContainerService.HintSize="562,137" sap2010:WorkflowViewState.IdRef="UiElementExists_9">
+                                    <ui:UiElementExists sap2010:Annotation.AnnotationText="10s" DisplayName="Element Exists 'document  ジョブカン共通IDログイン'" sap:VirtualizedContainerService.HintSize="1067,137" sap2010:WorkflowViewState.IdRef="UiElementExists_9">
                                       <ui:UiElementExists.Exists>
                                         <OutArgument x:TypeArguments="x:Boolean">
                                           <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_117">bLoginJC</CSharpReference>
@@ -877,20 +877,20 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </ui:UiElementExists>
-                                    <If sap:VirtualizedContainerService.HintSize="562,1634" sap2010:WorkflowViewState.IdRef="If_17">
+                                    <If sap:VirtualizedContainerService.HintSize="1067,2141" sap2010:WorkflowViewState.IdRef="If_17">
                                       <If.Condition>
                                         <InArgument x:TypeArguments="x:Boolean">
                                           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_118">bLoginJC</CSharpValue>
                                         </InArgument>
                                       </If.Condition>
                                       <If.Then>
-                                        <Sequence sap:VirtualizedContainerService.HintSize="526,1458" sap2010:WorkflowViewState.IdRef="Sequence_74">
+                                        <Sequence sap:VirtualizedContainerService.HintSize="1031,1955" sap2010:WorkflowViewState.IdRef="Sequence_74">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'link  google Googleでログイン'" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="Click_33" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'link  google Googleでログイン'" sap:VirtualizedContainerService.HintSize="989,106" sap2010:WorkflowViewState.IdRef="Click_33" KeyModifiers="None" MouseButton="BTN_LEFT">
                                             <ui:Click.CursorPosition>
                                               <ui:CursorPosition Position="Center">
                                                 <ui:CursorPosition.OffsetX>
@@ -912,115 +912,219 @@
                                               </ui:Target>
                                             </ui:Click.Target>
                                           </ui:Click>
-                                          <ui:UiElementExists sap2010:Annotation.AnnotationText="5s" DisplayName="要素の存在を確認 'DIV'" sap:VirtualizedContainerService.HintSize="484,137" sap2010:WorkflowViewState.IdRef="UiElementExists_10">
-                                            <ui:UiElementExists.Exists>
-                                              <OutArgument x:TypeArguments="x:Boolean">
-                                                <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_118">bGoogleUser</CSharpReference>
-                                              </OutArgument>
-                                            </ui:UiElementExists.Exists>
-                                            <ui:UiElementExists.Target>
-                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="da61c808-bd09-47f6-9b09-0789cf3d23da" InformativeScreenshot="56a7ef48027f4fa0d149f4c3e959c24f" Selector="&lt;webctrl aaname='son_changhan@fk.cocone.co.jp' parentid='view_container' tag='DIV' /&gt;" TimeoutMS="5000">
-                                                <ui:Target.WaitForReady>
-                                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                </ui:Target.WaitForReady>
-                                              </ui:Target>
-                                            </ui:UiElementExists.Target>
+                                          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="989,1717" sap2010:WorkflowViewState.IdRef="Sequence_88">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                          </ui:UiElementExists>
-                                          <If DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="484,1043" sap2010:WorkflowViewState.IdRef="If_16">
-                                            <If.Condition>
-                                              <InArgument x:TypeArguments="x:Boolean">
-                                                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_119">bGoogleUser</CSharpValue>
-                                              </InArgument>
-                                            </If.Condition>
-                                            <If.Then>
-                                              <Sequence sap:VirtualizedContainerService.HintSize="376,867" sap2010:WorkflowViewState.IdRef="Sequence_72">
-                                                <sap:WorkflowViewStateService.ViewState>
-                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                  </scg:Dictionary>
-                                                </sap:WorkflowViewStateService.ViewState>
-                                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="クリック 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_34" KeyModifiers="None" MouseButton="BTN_LEFT">
-                                                  <ui:Click.CursorPosition>
-                                                    <ui:CursorPosition Position="Center">
-                                                      <ui:CursorPosition.OffsetX>
-                                                        <InArgument x:TypeArguments="x:Int32" />
-                                                      </ui:CursorPosition.OffsetX>
-                                                      <ui:CursorPosition.OffsetY>
-                                                        <InArgument x:TypeArguments="x:Int32" />
-                                                      </ui:CursorPosition.OffsetY>
-                                                    </ui:CursorPosition>
-                                                  </ui:Click.CursorPosition>
-                                                  <ui:Click.Target>
-                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5d1033c2-05a1-4bd0-9287-4bcbb4c4d91f" InformativeScreenshot="1b914fd154686b8227ea9bea6768fd6f" Selector="&lt;webctrl aaname='son_changhan@fk.cocone.co.jp' parentid='view_container' tag='DIV' /&gt;">
-                                                      <ui:Target.TimeoutMS>
-                                                        <InArgument x:TypeArguments="x:Int32" />
-                                                      </ui:Target.TimeoutMS>
-                                                      <ui:Target.WaitForReady>
-                                                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                      </ui:Target.WaitForReady>
-                                                    </ui:Target>
-                                                  </ui:Click.Target>
-                                                </ui:Click>
-                                                <Delay sap2010:Annotation.AnnotationText="2s" DisplayName="待機" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,53" sap2010:WorkflowViewState.IdRef="Delay_36">
+                                            <ui:UiElementExists DisplayName="要素の存在を確認 'SPAN'" sap:VirtualizedContainerService.HintSize="947,106" sap2010:WorkflowViewState.IdRef="UiElementExists_12">
+                                              <ui:UiElementExists.Exists>
+                                                <OutArgument x:TypeArguments="x:Boolean">
+                                                  <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_143">bGoogleUser1</CSharpReference>
+                                                </OutArgument>
+                                              </ui:UiElementExists.Exists>
+                                              <ui:UiElementExists.Target>
+                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="71e7602d-9994-416f-849d-2c0b6328f54c" InformativeScreenshot="cd5929c9eb9e8f33b16658812f643ed1" Selector="&lt;webctrl parentid='headingText' tag='SPAN' /&gt;">
+                                                  <ui:Target.TimeoutMS>
+                                                    <InArgument x:TypeArguments="x:Int32" />
+                                                  </ui:Target.TimeoutMS>
+                                                  <ui:Target.WaitForReady>
+                                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                  </ui:Target.WaitForReady>
+                                                </ui:Target>
+                                              </ui:UiElementExists.Target>
+                                            </ui:UiElementExists>
+                                            <If DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="947,1479" sap2010:WorkflowViewState.IdRef="If_21">
+                                              <If.Condition>
+                                                <InArgument x:TypeArguments="x:Boolean">
+                                                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_138">bGoogleUser1</CSharpValue>
+                                                </InArgument>
+                                              </If.Condition>
+                                              <If.Then>
+                                                <Sequence sap:VirtualizedContainerService.HintSize="376,875" sap2010:WorkflowViewState.IdRef="Sequence_84">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                </Delay>
-                                                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_32" Key="tab" KeyModifiers="None" SpecialKey="True">
-                                                  <ui:SendHotkey.Target>
-                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="62c0b1a7-9851-4123-94e9-4e00326c56fc" InformativeScreenshot="2c03f9354563cee38590b3684d6b54a9" Selector="&lt;webctrl css-selector='body' tag='BODY' /&gt;&lt;webctrl isleaf='1' tag='DIV' idx='1' /&gt;">
-                                                      <ui:Target.TimeoutMS>
-                                                        <InArgument x:TypeArguments="x:Int32" />
-                                                      </ui:Target.TimeoutMS>
-                                                      <ui:Target.WaitForReady>
-                                                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                      </ui:Target.WaitForReady>
-                                                    </ui:Target>
-                                                  </ui:SendHotkey.Target>
-                                                </ui:SendHotkey>
-                                                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_33" Key="tab" KeyModifiers="None" SpecialKey="True">
-                                                  <ui:SendHotkey.Target>
-                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="62c0b1a7-9851-4123-94e9-4e00326c56fc" InformativeScreenshot="2c03f9354563cee38590b3684d6b54a9" Selector="&lt;webctrl css-selector='body' tag='BODY' /&gt;&lt;webctrl isleaf='1' tag='DIV' idx='1' /&gt;">
-                                                      <ui:Target.TimeoutMS>
-                                                        <InArgument x:TypeArguments="x:Int32" />
-                                                      </ui:Target.TimeoutMS>
-                                                      <ui:Target.WaitForReady>
-                                                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                      </ui:Target.WaitForReady>
-                                                    </ui:Target>
-                                                  </ui:SendHotkey.Target>
-                                                </ui:SendHotkey>
-                                                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_34" Key="enter" KeyModifiers="None" SpecialKey="True">
-                                                  <ui:SendHotkey.Target>
-                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="62c0b1a7-9851-4123-94e9-4e00326c56fc" InformativeScreenshot="2c03f9354563cee38590b3684d6b54a9" Selector="&lt;webctrl css-selector='body' tag='BODY' /&gt;&lt;webctrl isleaf='1' tag='DIV' idx='1' /&gt;">
-                                                      <ui:Target.TimeoutMS>
-                                                        <InArgument x:TypeArguments="x:Int32" />
-                                                      </ui:Target.TimeoutMS>
-                                                      <ui:Target.WaitForReady>
-                                                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                      </ui:Target.WaitForReady>
-                                                    </ui:Target>
-                                                  </ui:SendHotkey.Target>
-                                                </ui:SendHotkey>
-                                              </Sequence>
-                                            </If.Then>
-                                            <If.Else>
-                                              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_73">
-                                                <sap:WorkflowViewStateService.ViewState>
-                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                  </scg:Dictionary>
-                                                </sap:WorkflowViewStateService.ViewState>
-                                              </Sequence>
-                                            </If.Else>
-                                          </If>
+                                                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="SendHotkey_40" Key="enter" KeyModifiers="None" SpecialKey="True">
+                                                    <ui:SendHotkey.Target>
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="28455cf3-4689-44b7-b357-82172d13580f">
+                                                        <ui:Target.TimeoutMS>
+                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                        </ui:Target.TimeoutMS>
+                                                        <ui:Target.WaitForReady>
+                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                        </ui:Target.WaitForReady>
+                                                      </ui:Target>
+                                                    </ui:SendHotkey.Target>
+                                                  </ui:SendHotkey>
+                                                  <Delay sap2010:Annotation.AnnotationText="2s" DisplayName="待機" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,53" sap2010:WorkflowViewState.IdRef="Delay_39">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </Delay>
+                                                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_41" Key="tab" KeyModifiers="None" SpecialKey="True">
+                                                    <ui:SendHotkey.Target>
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="62c0b1a7-9851-4123-94e9-4e00326c56fc" InformativeScreenshot="2c03f9354563cee38590b3684d6b54a9" Selector="&lt;webctrl css-selector='body' tag='BODY' /&gt;&lt;webctrl isleaf='1' tag='DIV' idx='1' /&gt;">
+                                                        <ui:Target.TimeoutMS>
+                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                        </ui:Target.TimeoutMS>
+                                                        <ui:Target.WaitForReady>
+                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                        </ui:Target.WaitForReady>
+                                                      </ui:Target>
+                                                    </ui:SendHotkey.Target>
+                                                  </ui:SendHotkey>
+                                                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_42" Key="tab" KeyModifiers="None" SpecialKey="True">
+                                                    <ui:SendHotkey.Target>
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="62c0b1a7-9851-4123-94e9-4e00326c56fc" InformativeScreenshot="2c03f9354563cee38590b3684d6b54a9" Selector="&lt;webctrl css-selector='body' tag='BODY' /&gt;&lt;webctrl isleaf='1' tag='DIV' idx='1' /&gt;">
+                                                        <ui:Target.TimeoutMS>
+                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                        </ui:Target.TimeoutMS>
+                                                        <ui:Target.WaitForReady>
+                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                        </ui:Target.WaitForReady>
+                                                      </ui:Target>
+                                                    </ui:SendHotkey.Target>
+                                                  </ui:SendHotkey>
+                                                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_43" Key="enter" KeyModifiers="None" SpecialKey="True">
+                                                    <ui:SendHotkey.Target>
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="62c0b1a7-9851-4123-94e9-4e00326c56fc" InformativeScreenshot="2c03f9354563cee38590b3684d6b54a9" Selector="&lt;webctrl css-selector='body' tag='BODY' /&gt;&lt;webctrl isleaf='1' tag='DIV' idx='1' /&gt;">
+                                                        <ui:Target.TimeoutMS>
+                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                        </ui:Target.TimeoutMS>
+                                                        <ui:Target.WaitForReady>
+                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                        </ui:Target.WaitForReady>
+                                                      </ui:Target>
+                                                    </ui:SendHotkey.Target>
+                                                  </ui:SendHotkey>
+                                                </Sequence>
+                                              </If.Then>
+                                              <If.Else>
+                                                <Sequence sap:VirtualizedContainerService.HintSize="526,1322" sap2010:WorkflowViewState.IdRef="Sequence_87">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:UiElementExists sap2010:Annotation.AnnotationText="10s" DisplayName="要素の存在を確認 'DIV'" sap:VirtualizedContainerService.HintSize="484,137" sap2010:WorkflowViewState.IdRef="UiElementExists_13">
+                                                    <ui:UiElementExists.Exists>
+                                                      <OutArgument x:TypeArguments="x:Boolean">
+                                                        <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_144">bGoogleUser2</CSharpReference>
+                                                      </OutArgument>
+                                                    </ui:UiElementExists.Exists>
+                                                    <ui:UiElementExists.Target>
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="da61c808-bd09-47f6-9b09-0789cf3d23da" InformativeScreenshot="56a7ef48027f4fa0d149f4c3e959c24f" Selector="&lt;webctrl aaname='son_changhan@fk.cocone.co.jp' parentid='view_container' tag='DIV' /&gt;" TimeoutMS="10000">
+                                                        <ui:Target.WaitForReady>
+                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                        </ui:Target.WaitForReady>
+                                                      </ui:Target>
+                                                    </ui:UiElementExists.Target>
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </ui:UiElementExists>
+                                                  <If DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="484,1053" sap2010:WorkflowViewState.IdRef="If_20">
+                                                    <If.Condition>
+                                                      <InArgument x:TypeArguments="x:Boolean">
+                                                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_139">bGoogleUser2</CSharpValue>
+                                                      </InArgument>
+                                                    </If.Condition>
+                                                    <If.Then>
+                                                      <Sequence sap:VirtualizedContainerService.HintSize="376,867" sap2010:WorkflowViewState.IdRef="Sequence_85">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="クリック 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_35" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                                          <ui:Click.CursorPosition>
+                                                            <ui:CursorPosition Position="Center">
+                                                              <ui:CursorPosition.OffsetX>
+                                                                <InArgument x:TypeArguments="x:Int32" />
+                                                              </ui:CursorPosition.OffsetX>
+                                                              <ui:CursorPosition.OffsetY>
+                                                                <InArgument x:TypeArguments="x:Int32" />
+                                                              </ui:CursorPosition.OffsetY>
+                                                            </ui:CursorPosition>
+                                                          </ui:Click.CursorPosition>
+                                                          <ui:Click.Target>
+                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5d1033c2-05a1-4bd0-9287-4bcbb4c4d91f" InformativeScreenshot="1b914fd154686b8227ea9bea6768fd6f" Selector="&lt;webctrl aaname='son_changhan@fk.cocone.co.jp' parentid='view_container' tag='DIV' /&gt;">
+                                                              <ui:Target.TimeoutMS>
+                                                                <InArgument x:TypeArguments="x:Int32" />
+                                                              </ui:Target.TimeoutMS>
+                                                              <ui:Target.WaitForReady>
+                                                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                              </ui:Target.WaitForReady>
+                                                            </ui:Target>
+                                                          </ui:Click.Target>
+                                                        </ui:Click>
+                                                        <Delay sap2010:Annotation.AnnotationText="2s" DisplayName="待機" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,53" sap2010:WorkflowViewState.IdRef="Delay_40">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                        </Delay>
+                                                        <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_44" Key="tab" KeyModifiers="None" SpecialKey="True">
+                                                          <ui:SendHotkey.Target>
+                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="62c0b1a7-9851-4123-94e9-4e00326c56fc" InformativeScreenshot="2c03f9354563cee38590b3684d6b54a9" Selector="&lt;webctrl css-selector='body' tag='BODY' /&gt;&lt;webctrl isleaf='1' tag='DIV' idx='1' /&gt;">
+                                                              <ui:Target.TimeoutMS>
+                                                                <InArgument x:TypeArguments="x:Int32" />
+                                                              </ui:Target.TimeoutMS>
+                                                              <ui:Target.WaitForReady>
+                                                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                              </ui:Target.WaitForReady>
+                                                            </ui:Target>
+                                                          </ui:SendHotkey.Target>
+                                                        </ui:SendHotkey>
+                                                        <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_45" Key="tab" KeyModifiers="None" SpecialKey="True">
+                                                          <ui:SendHotkey.Target>
+                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="62c0b1a7-9851-4123-94e9-4e00326c56fc" InformativeScreenshot="2c03f9354563cee38590b3684d6b54a9" Selector="&lt;webctrl css-selector='body' tag='BODY' /&gt;&lt;webctrl isleaf='1' tag='DIV' idx='1' /&gt;">
+                                                              <ui:Target.TimeoutMS>
+                                                                <InArgument x:TypeArguments="x:Int32" />
+                                                              </ui:Target.TimeoutMS>
+                                                              <ui:Target.WaitForReady>
+                                                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                              </ui:Target.WaitForReady>
+                                                            </ui:Target>
+                                                          </ui:SendHotkey.Target>
+                                                        </ui:SendHotkey>
+                                                        <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_46" Key="enter" KeyModifiers="None" SpecialKey="True">
+                                                          <ui:SendHotkey.Target>
+                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="62c0b1a7-9851-4123-94e9-4e00326c56fc" InformativeScreenshot="2c03f9354563cee38590b3684d6b54a9" Selector="&lt;webctrl css-selector='body' tag='BODY' /&gt;&lt;webctrl isleaf='1' tag='DIV' idx='1' /&gt;">
+                                                              <ui:Target.TimeoutMS>
+                                                                <InArgument x:TypeArguments="x:Int32" />
+                                                              </ui:Target.TimeoutMS>
+                                                              <ui:Target.WaitForReady>
+                                                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                              </ui:Target.WaitForReady>
+                                                            </ui:Target>
+                                                          </ui:SendHotkey.Target>
+                                                        </ui:SendHotkey>
+                                                      </Sequence>
+                                                    </If.Then>
+                                                    <If.Else>
+                                                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_86">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                      </Sequence>
+                                                    </If.Else>
+                                                  </If>
+                                                </Sequence>
+                                              </If.Else>
+                                            </If>
+                                          </Sequence>
                                         </Sequence>
                                       </If.Then>
                                       <If.Else>
@@ -1033,14 +1137,14 @@
                                         </Sequence>
                                       </If.Else>
                                     </If>
-                                    <Delay sap2010:Annotation.AnnotationText="2s" DisplayName="待機" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="562,53" sap2010:WorkflowViewState.IdRef="Delay_37">
+                                    <Delay sap2010:Annotation.AnnotationText="2s" DisplayName="待機" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="1067,53" sap2010:WorkflowViewState.IdRef="Delay_37">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </Delay>
-                                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="ホットキーを押下" sap:VirtualizedContainerService.HintSize="562,114" sap2010:WorkflowViewState.IdRef="SendHotkey_35" Key="d" KeyModifiers="Alt">
+                                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="ホットキーを押下" sap:VirtualizedContainerService.HintSize="1067,114" sap2010:WorkflowViewState.IdRef="SendHotkey_35" Key="d" KeyModifiers="Alt">
                                       <ui:SendHotkey.Target>
                                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="61eabe56-f034-4ecf-ad1c-e31344dc06b7">
                                           <ui:Target.TimeoutMS>
@@ -1052,14 +1156,14 @@
                                         </ui:Target>
                                       </ui:SendHotkey.Target>
                                     </ui:SendHotkey>
-                                    <ui:CopySelectedText SendWindowMessages="{x:Null}" TimeoutMS="{x:Null}" DisplayName="選択されたテキストをコピー" sap:VirtualizedContainerService.HintSize="562,22" sap2010:WorkflowViewState.IdRef="CopySelectedText_1">
+                                    <ui:CopySelectedText SendWindowMessages="{x:Null}" TimeoutMS="{x:Null}" DisplayName="選択されたテキストをコピー" sap:VirtualizedContainerService.HintSize="1067,22" sap2010:WorkflowViewState.IdRef="CopySelectedText_1">
                                       <ui:CopySelectedText.Result>
                                         <OutArgument x:TypeArguments="x:String">
                                           <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_121">strCopy</CSharpReference>
                                         </OutArgument>
                                       </ui:CopySelectedText.Result>
                                     </ui:CopySelectedText>
-                                    <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="562,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+                                    <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="1067,60" sap2010:WorkflowViewState.IdRef="Assign_17">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:String">
                                           <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_128">strPoliceNumber</CSharpReference>
@@ -1071,7 +1175,7 @@
                                         </InArgument>
                                       </Assign.Value>
                                     </Assign>
-                                    <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="562,22" sap2010:WorkflowViewState.IdRef="CloseTab_9" />
+                                    <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="1067,22" sap2010:WorkflowViewState.IdRef="CloseTab_9" />
                                   </Sequence>
                                 </ActivityAction>
                               </ui:BrowserScope.Body>
@@ -1100,13 +1204,13 @@
                             <Transition.To>
                               <State x:Name="__ReferenceID1" DisplayName="State - Data Scraping" sap:VirtualizedContainerService.HintSize="188,61" sap2010:WorkflowViewState.IdRef="State_5">
                                 <State.Entry>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="695,3653" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="1185,4160" sap2010:WorkflowViewState.IdRef="Sequence_7">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="653,131" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+                                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1143,131" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
                                       <ui:MultipleAssign.AssignOperations>
                                         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
@@ -1136,7 +1240,7 @@
                                         </scg:List>
                                       </ui:MultipleAssign.AssignOperations>
                                     </ui:MultipleAssign>
-                                    <If DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="653,310" sap2010:WorkflowViewState.IdRef="If_18">
+                                    <If DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="1143,310" sap2010:WorkflowViewState.IdRef="If_18">
                                       <If.Condition>
                                         <InArgument x:TypeArguments="x:Boolean">
                                           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_126">bPolice</CSharpValue>
@@ -1185,19 +1289,19 @@
                                         </Sequence>
                                       </If.Else>
                                     </If>
-                                    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="653,3040" sap2010:WorkflowViewState.IdRef="OpenBrowser_1">
+                                    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1143,3547" sap2010:WorkflowViewState.IdRef="OpenBrowser_1">
                                       <ui:OpenBrowser.Body>
                                         <ActivityAction x:TypeArguments="x:Object">
                                           <ActivityAction.Argument>
                                             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                           </ActivityAction.Argument>
-                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="604,2939" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1109,3446" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:UiElementExists sap2010:Annotation.AnnotationText="10s" DisplayName="Element Exists 'document  ジョブカン共通IDログイン'" sap:VirtualizedContainerService.HintSize="562,137" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                                            <ui:UiElementExists sap2010:Annotation.AnnotationText="10s" DisplayName="Element Exists 'document  ジョブカン共通IDログイン'" sap:VirtualizedContainerService.HintSize="1067,137" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                                               <ui:UiElementExists.Exists>
                                                 <OutArgument x:TypeArguments="x:Boolean">
                                                   <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">bLoginJC</CSharpReference>
@@ -1216,20 +1320,20 @@
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                             </ui:UiElementExists>
-                                            <If sap:VirtualizedContainerService.HintSize="562,1634" sap2010:WorkflowViewState.IdRef="If_2">
+                                            <If sap:VirtualizedContainerService.HintSize="1067,2141" sap2010:WorkflowViewState.IdRef="If_2">
                                               <If.Condition>
                                                 <InArgument x:TypeArguments="x:Boolean">
                                                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">bLoginJC</CSharpValue>
                                                 </InArgument>
                                               </If.Condition>
                                               <If.Then>
-                                                <Sequence sap:VirtualizedContainerService.HintSize="526,1458" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                                <Sequence sap:VirtualizedContainerService.HintSize="1031,1955" sap2010:WorkflowViewState.IdRef="Sequence_9">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'link  google Googleでログイン'" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'link  google Googleでログイン'" sap:VirtualizedContainerService.HintSize="989,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
                                                     <ui:Click.CursorPosition>
                                                       <ui:CursorPosition Position="Center">
                                                         <ui:CursorPosition.OffsetX>
@@ -1251,115 +1355,219 @@
                                                       </ui:Target>
                                                     </ui:Click.Target>
                                                   </ui:Click>
-                                                  <ui:UiElementExists sap2010:Annotation.AnnotationText="5s" DisplayName="要素の存在を確認 'DIV'" sap:VirtualizedContainerService.HintSize="484,137" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
-                                                    <ui:UiElementExists.Exists>
-                                                      <OutArgument x:TypeArguments="x:Boolean">
-                                                        <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_35">bGoogleUser</CSharpReference>
-                                                      </OutArgument>
-                                                    </ui:UiElementExists.Exists>
-                                                    <ui:UiElementExists.Target>
-                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="da61c808-bd09-47f6-9b09-0789cf3d23da" InformativeScreenshot="56a7ef48027f4fa0d149f4c3e959c24f" Selector="&lt;webctrl aaname='son_changhan@fk.cocone.co.jp' parentid='view_container' tag='DIV' /&gt;" TimeoutMS="5000">
-                                                        <ui:Target.WaitForReady>
-                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                        </ui:Target.WaitForReady>
-                                                      </ui:Target>
-                                                    </ui:UiElementExists.Target>
+                                                  <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="989,1717" sap2010:WorkflowViewState.IdRef="Sequence_93">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                  </ui:UiElementExists>
-                                                  <If DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="484,1043" sap2010:WorkflowViewState.IdRef="If_7">
-                                                    <If.Condition>
-                                                      <InArgument x:TypeArguments="x:Boolean">
-                                                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">bGoogleUser</CSharpValue>
-                                                      </InArgument>
-                                                    </If.Condition>
-                                                    <If.Then>
-                                                      <Sequence sap:VirtualizedContainerService.HintSize="376,867" sap2010:WorkflowViewState.IdRef="Sequence_21">
-                                                        <sap:WorkflowViewStateService.ViewState>
-                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                          </scg:Dictionary>
-                                                        </sap:WorkflowViewStateService.ViewState>
-                                                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="クリック 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT">
-                                                          <ui:Click.CursorPosition>
-                                                            <ui:CursorPosition Position="Center">
-                                                              <ui:CursorPosition.OffsetX>
-                                                                <InArgument x:TypeArguments="x:Int32" />
-                                                              </ui:CursorPosition.OffsetX>
-                                                              <ui:CursorPosition.OffsetY>
-                                                                <InArgument x:TypeArguments="x:Int32" />
-                                                              </ui:CursorPosition.OffsetY>
-                                                            </ui:CursorPosition>
-                                                          </ui:Click.CursorPosition>
-                                                          <ui:Click.Target>
-                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5d1033c2-05a1-4bd0-9287-4bcbb4c4d91f" InformativeScreenshot="1b914fd154686b8227ea9bea6768fd6f" Selector="&lt;webctrl aaname='son_changhan@fk.cocone.co.jp' parentid='view_container' tag='DIV' /&gt;">
-                                                              <ui:Target.TimeoutMS>
-                                                                <InArgument x:TypeArguments="x:Int32" />
-                                                              </ui:Target.TimeoutMS>
-                                                              <ui:Target.WaitForReady>
-                                                                <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                              </ui:Target.WaitForReady>
-                                                            </ui:Target>
-                                                          </ui:Click.Target>
-                                                        </ui:Click>
-                                                        <Delay sap2010:Annotation.AnnotationText="2s" DisplayName="待機" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,53" sap2010:WorkflowViewState.IdRef="Delay_11">
+                                                    <ui:UiElementExists DisplayName="要素の存在を確認 'SPAN'" sap:VirtualizedContainerService.HintSize="947,106" sap2010:WorkflowViewState.IdRef="UiElementExists_14">
+                                                      <ui:UiElementExists.Exists>
+                                                        <OutArgument x:TypeArguments="x:Boolean">
+                                                          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_145">bGoogleUser1</CSharpReference>
+                                                        </OutArgument>
+                                                      </ui:UiElementExists.Exists>
+                                                      <ui:UiElementExists.Target>
+                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="71e7602d-9994-416f-849d-2c0b6328f54c" InformativeScreenshot="cd5929c9eb9e8f33b16658812f643ed1" Selector="&lt;webctrl parentid='headingText' tag='SPAN' /&gt;">
+                                                          <ui:Target.TimeoutMS>
+                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                          </ui:Target.TimeoutMS>
+                                                          <ui:Target.WaitForReady>
+                                                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                          </ui:Target.WaitForReady>
+                                                        </ui:Target>
+                                                      </ui:UiElementExists.Target>
+                                                    </ui:UiElementExists>
+                                                    <If DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="947,1479" sap2010:WorkflowViewState.IdRef="If_23">
+                                                      <If.Condition>
+                                                        <InArgument x:TypeArguments="x:Boolean">
+                                                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_140">bGoogleUser1</CSharpValue>
+                                                        </InArgument>
+                                                      </If.Condition>
+                                                      <If.Then>
+                                                        <Sequence sap:VirtualizedContainerService.HintSize="376,875" sap2010:WorkflowViewState.IdRef="Sequence_89">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                        </Delay>
-                                                        <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_6" Key="tab" KeyModifiers="None" SpecialKey="True">
-                                                          <ui:SendHotkey.Target>
-                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="62c0b1a7-9851-4123-94e9-4e00326c56fc" InformativeScreenshot="2c03f9354563cee38590b3684d6b54a9" Selector="&lt;webctrl css-selector='body' tag='BODY' /&gt;&lt;webctrl isleaf='1' tag='DIV' idx='1' /&gt;">
-                                                              <ui:Target.TimeoutMS>
-                                                                <InArgument x:TypeArguments="x:Int32" />
-                                                              </ui:Target.TimeoutMS>
-                                                              <ui:Target.WaitForReady>
-                                                                <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                              </ui:Target.WaitForReady>
-                                                            </ui:Target>
-                                                          </ui:SendHotkey.Target>
-                                                        </ui:SendHotkey>
-                                                        <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_7" Key="tab" KeyModifiers="None" SpecialKey="True">
-                                                          <ui:SendHotkey.Target>
-                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="62c0b1a7-9851-4123-94e9-4e00326c56fc" InformativeScreenshot="2c03f9354563cee38590b3684d6b54a9" Selector="&lt;webctrl css-selector='body' tag='BODY' /&gt;&lt;webctrl isleaf='1' tag='DIV' idx='1' /&gt;">
-                                                              <ui:Target.TimeoutMS>
-                                                                <InArgument x:TypeArguments="x:Int32" />
-                                                              </ui:Target.TimeoutMS>
-                                                              <ui:Target.WaitForReady>
-                                                                <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                              </ui:Target.WaitForReady>
-                                                            </ui:Target>
-                                                          </ui:SendHotkey.Target>
-                                                        </ui:SendHotkey>
-                                                        <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_8" Key="enter" KeyModifiers="None" SpecialKey="True">
-                                                          <ui:SendHotkey.Target>
-                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="62c0b1a7-9851-4123-94e9-4e00326c56fc" InformativeScreenshot="2c03f9354563cee38590b3684d6b54a9" Selector="&lt;webctrl css-selector='body' tag='BODY' /&gt;&lt;webctrl isleaf='1' tag='DIV' idx='1' /&gt;">
-                                                              <ui:Target.TimeoutMS>
-                                                                <InArgument x:TypeArguments="x:Int32" />
-                                                              </ui:Target.TimeoutMS>
-                                                              <ui:Target.WaitForReady>
-                                                                <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                              </ui:Target.WaitForReady>
-                                                            </ui:Target>
-                                                          </ui:SendHotkey.Target>
-                                                        </ui:SendHotkey>
-                                                      </Sequence>
-                                                    </If.Then>
-                                                    <If.Else>
-                                                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_22">
-                                                        <sap:WorkflowViewStateService.ViewState>
-                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                          </scg:Dictionary>
-                                                        </sap:WorkflowViewStateService.ViewState>
-                                                      </Sequence>
-                                                    </If.Else>
-                                                  </If>
+                                                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="SendHotkey_47" Key="enter" KeyModifiers="None" SpecialKey="True">
+                                                            <ui:SendHotkey.Target>
+                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="28455cf3-4689-44b7-b357-82172d13580f">
+                                                                <ui:Target.TimeoutMS>
+                                                                  <InArgument x:TypeArguments="x:Int32" />
+                                                                </ui:Target.TimeoutMS>
+                                                                <ui:Target.WaitForReady>
+                                                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                                </ui:Target.WaitForReady>
+                                                              </ui:Target>
+                                                            </ui:SendHotkey.Target>
+                                                          </ui:SendHotkey>
+                                                          <Delay sap2010:Annotation.AnnotationText="2s" DisplayName="待機" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,53" sap2010:WorkflowViewState.IdRef="Delay_41">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                          </Delay>
+                                                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_48" Key="tab" KeyModifiers="None" SpecialKey="True">
+                                                            <ui:SendHotkey.Target>
+                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="62c0b1a7-9851-4123-94e9-4e00326c56fc" InformativeScreenshot="2c03f9354563cee38590b3684d6b54a9" Selector="&lt;webctrl css-selector='body' tag='BODY' /&gt;&lt;webctrl isleaf='1' tag='DIV' idx='1' /&gt;">
+                                                                <ui:Target.TimeoutMS>
+                                                                  <InArgument x:TypeArguments="x:Int32" />
+                                                                </ui:Target.TimeoutMS>
+                                                                <ui:Target.WaitForReady>
+                                                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                                </ui:Target.WaitForReady>
+                                                              </ui:Target>
+                                                            </ui:SendHotkey.Target>
+                                                          </ui:SendHotkey>
+                                                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_49" Key="tab" KeyModifiers="None" SpecialKey="True">
+                                                            <ui:SendHotkey.Target>
+                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="62c0b1a7-9851-4123-94e9-4e00326c56fc" InformativeScreenshot="2c03f9354563cee38590b3684d6b54a9" Selector="&lt;webctrl css-selector='body' tag='BODY' /&gt;&lt;webctrl isleaf='1' tag='DIV' idx='1' /&gt;">
+                                                                <ui:Target.TimeoutMS>
+                                                                  <InArgument x:TypeArguments="x:Int32" />
+                                                                </ui:Target.TimeoutMS>
+                                                                <ui:Target.WaitForReady>
+                                                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                                </ui:Target.WaitForReady>
+                                                              </ui:Target>
+                                                            </ui:SendHotkey.Target>
+                                                          </ui:SendHotkey>
+                                                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_50" Key="enter" KeyModifiers="None" SpecialKey="True">
+                                                            <ui:SendHotkey.Target>
+                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="62c0b1a7-9851-4123-94e9-4e00326c56fc" InformativeScreenshot="2c03f9354563cee38590b3684d6b54a9" Selector="&lt;webctrl css-selector='body' tag='BODY' /&gt;&lt;webctrl isleaf='1' tag='DIV' idx='1' /&gt;">
+                                                                <ui:Target.TimeoutMS>
+                                                                  <InArgument x:TypeArguments="x:Int32" />
+                                                                </ui:Target.TimeoutMS>
+                                                                <ui:Target.WaitForReady>
+                                                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                                </ui:Target.WaitForReady>
+                                                              </ui:Target>
+                                                            </ui:SendHotkey.Target>
+                                                          </ui:SendHotkey>
+                                                        </Sequence>
+                                                      </If.Then>
+                                                      <If.Else>
+                                                        <Sequence sap:VirtualizedContainerService.HintSize="526,1322" sap2010:WorkflowViewState.IdRef="Sequence_92">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <ui:UiElementExists sap2010:Annotation.AnnotationText="10s" DisplayName="要素の存在を確認 'DIV'" sap:VirtualizedContainerService.HintSize="484,137" sap2010:WorkflowViewState.IdRef="UiElementExists_15">
+                                                            <ui:UiElementExists.Exists>
+                                                              <OutArgument x:TypeArguments="x:Boolean">
+                                                                <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_146">bGoogleUser2</CSharpReference>
+                                                              </OutArgument>
+                                                            </ui:UiElementExists.Exists>
+                                                            <ui:UiElementExists.Target>
+                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="da61c808-bd09-47f6-9b09-0789cf3d23da" InformativeScreenshot="56a7ef48027f4fa0d149f4c3e959c24f" Selector="&lt;webctrl aaname='son_changhan@fk.cocone.co.jp' parentid='view_container' tag='DIV' /&gt;" TimeoutMS="10000">
+                                                                <ui:Target.WaitForReady>
+                                                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                                </ui:Target.WaitForReady>
+                                                              </ui:Target>
+                                                            </ui:UiElementExists.Target>
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                          </ui:UiElementExists>
+                                                          <If DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="484,1053" sap2010:WorkflowViewState.IdRef="If_22">
+                                                            <If.Condition>
+                                                              <InArgument x:TypeArguments="x:Boolean">
+                                                                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_141">bGoogleUser2</CSharpValue>
+                                                              </InArgument>
+                                                            </If.Condition>
+                                                            <If.Then>
+                                                              <Sequence sap:VirtualizedContainerService.HintSize="376,867" sap2010:WorkflowViewState.IdRef="Sequence_90">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="クリック 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_36" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                                                  <ui:Click.CursorPosition>
+                                                                    <ui:CursorPosition Position="Center">
+                                                                      <ui:CursorPosition.OffsetX>
+                                                                        <InArgument x:TypeArguments="x:Int32" />
+                                                                      </ui:CursorPosition.OffsetX>
+                                                                      <ui:CursorPosition.OffsetY>
+                                                                        <InArgument x:TypeArguments="x:Int32" />
+                                                                      </ui:CursorPosition.OffsetY>
+                                                                    </ui:CursorPosition>
+                                                                  </ui:Click.CursorPosition>
+                                                                  <ui:Click.Target>
+                                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5d1033c2-05a1-4bd0-9287-4bcbb4c4d91f" InformativeScreenshot="1b914fd154686b8227ea9bea6768fd6f" Selector="&lt;webctrl aaname='son_changhan@fk.cocone.co.jp' parentid='view_container' tag='DIV' /&gt;">
+                                                                      <ui:Target.TimeoutMS>
+                                                                        <InArgument x:TypeArguments="x:Int32" />
+                                                                      </ui:Target.TimeoutMS>
+                                                                      <ui:Target.WaitForReady>
+                                                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                                      </ui:Target.WaitForReady>
+                                                                    </ui:Target>
+                                                                  </ui:Click.Target>
+                                                                </ui:Click>
+                                                                <Delay sap2010:Annotation.AnnotationText="2s" DisplayName="待機" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,53" sap2010:WorkflowViewState.IdRef="Delay_42">
+                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                    </scg:Dictionary>
+                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                </Delay>
+                                                                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_51" Key="tab" KeyModifiers="None" SpecialKey="True">
+                                                                  <ui:SendHotkey.Target>
+                                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="62c0b1a7-9851-4123-94e9-4e00326c56fc" InformativeScreenshot="2c03f9354563cee38590b3684d6b54a9" Selector="&lt;webctrl css-selector='body' tag='BODY' /&gt;&lt;webctrl isleaf='1' tag='DIV' idx='1' /&gt;">
+                                                                      <ui:Target.TimeoutMS>
+                                                                        <InArgument x:TypeArguments="x:Int32" />
+                                                                      </ui:Target.TimeoutMS>
+                                                                      <ui:Target.WaitForReady>
+                                                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                                      </ui:Target.WaitForReady>
+                                                                    </ui:Target>
+                                                                  </ui:SendHotkey.Target>
+                                                                </ui:SendHotkey>
+                                                                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_52" Key="tab" KeyModifiers="None" SpecialKey="True">
+                                                                  <ui:SendHotkey.Target>
+                                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="62c0b1a7-9851-4123-94e9-4e00326c56fc" InformativeScreenshot="2c03f9354563cee38590b3684d6b54a9" Selector="&lt;webctrl css-selector='body' tag='BODY' /&gt;&lt;webctrl isleaf='1' tag='DIV' idx='1' /&gt;">
+                                                                      <ui:Target.TimeoutMS>
+                                                                        <InArgument x:TypeArguments="x:Int32" />
+                                                                      </ui:Target.TimeoutMS>
+                                                                      <ui:Target.WaitForReady>
+                                                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                                      </ui:Target.WaitForReady>
+                                                                    </ui:Target>
+                                                                  </ui:SendHotkey.Target>
+                                                                </ui:SendHotkey>
+                                                                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_53" Key="enter" KeyModifiers="None" SpecialKey="True">
+                                                                  <ui:SendHotkey.Target>
+                                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="62c0b1a7-9851-4123-94e9-4e00326c56fc" InformativeScreenshot="2c03f9354563cee38590b3684d6b54a9" Selector="&lt;webctrl css-selector='body' tag='BODY' /&gt;&lt;webctrl isleaf='1' tag='DIV' idx='1' /&gt;">
+                                                                      <ui:Target.TimeoutMS>
+                                                                        <InArgument x:TypeArguments="x:Int32" />
+                                                                      </ui:Target.TimeoutMS>
+                                                                      <ui:Target.WaitForReady>
+                                                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                                      </ui:Target.WaitForReady>
+                                                                    </ui:Target>
+                                                                  </ui:SendHotkey.Target>
+                                                                </ui:SendHotkey>
+                                                              </Sequence>
+                                                            </If.Then>
+                                                            <If.Else>
+                                                              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_91">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                              </Sequence>
+                                                            </If.Else>
+                                                          </If>
+                                                        </Sequence>
+                                                      </If.Else>
+                                                    </If>
+                                                  </Sequence>
                                                 </Sequence>
                                               </If.Then>
                                               <If.Else>
@@ -1372,7 +1580,7 @@
                                                 </Sequence>
                                               </If.Else>
                                             </If>
-                                            <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DisplayName="Extract Structured Data 'テーブル'" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div'/&gt;&lt;/row&gt;&lt;column exact='1' name='Column1' attr='text'&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='label' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='text'&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='div' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="562,106" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="100" SimulateClick="True">
+                                            <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DisplayName="Extract Structured Data 'テーブル'" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div'/&gt;&lt;/row&gt;&lt;column exact='1' name='Column1' attr='text'&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='label' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='text'&gt;&lt;webctrl tag='div'/&gt;&lt;webctrl tag='div' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="1067,106" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="100" SimulateClick="True">
                                               <ui:ExtractData.DataTable>
                                                 <InOutArgument x:TypeArguments="sd:DataTable">
                                                   <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_18">dtExtract</CSharpReference>
@@ -1386,7 +1594,7 @@
                                                 </ui:Target>
                                               </ui:ExtractData.Target>
                                             </ui:ExtractData>
-                                            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'タイトル'" sap:VirtualizedContainerService.HintSize="562,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                                            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'タイトル'" sap:VirtualizedContainerService.HintSize="1067,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
                                               <ui:GetValue.Target>
                                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8fffe95a-b369-4cb8-8c8e-b0d6c880340c" InformativeScreenshot="a6308e0e761d260791fcb18ee4b5dd40" Selector="&lt;webctrl tag='H4' css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ng-include&amp;gt;div&amp;gt;h4' /&gt;">
                                                   <ui:Target.TimeoutMS>
@@ -1403,7 +1611,7 @@
                                                 </OutArgument>
                                               </ui:GetValue.Value>
                                             </ui:GetValue>
-                                            <ui:CommentOut sap2010:Annotation.AnnotationText="（2021.11.09）警察依頼を警察コードの代わりにJCコードを使うように現行。" DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="562,338" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                                            <ui:CommentOut sap2010:Annotation.AnnotationText="（2021.11.09）警察依頼を警察コードの代わりにJCコードを使うように現行。" DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1067,338" sap2010:WorkflowViewState.IdRef="CommentOut_1">
                                               <ui:CommentOut.Body>
                                                 <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,229" sap2010:WorkflowViewState.IdRef="Sequence_26">
                                                   <sap:WorkflowViewStateService.ViewState>
@@ -1441,7 +1649,7 @@
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                             </ui:CommentOut>
-                                            <ui:InvokeCode ContinueOnError="{x:Null}" Code="strTitle = strTitle.Substring(strTitle.IndexOf(&quot;】&quot;) + 1).Trim();&#xD;&#xA;&#xD;&#xA;// （2021.04.07）言語が違う場合、データ抽出が失敗するので使わない。&#xD;&#xA;// strUrl = &quot;https://&quot; + strUrl;&#xD;&#xA;&#xD;&#xA;// （2021.11.09）警察依頼を警察コードの代わりにJCコードを使うように現行。&#xD;&#xA;/*&#xD;&#xA;bool bFlag = false;&#xD;&#xA;strID = strID.Replace(&quot;ID：&quot;, &quot;&quot;);&#xD;&#xA;&#xD;&#xA;try&#xD;&#xA;{&#xD;&#xA;&#x9;int.Parse(strID);&#xD;&#xA;&#x9;bFlag = true;&#xD;&#xA;}&#xD;&#xA;catch (Exception ex)&#xD;&#xA;{&#xD;&#xA;&#x9;bFlag = false;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;strTitle = strID + strTitle;&#xD;&#xA;if (bFlag)&#xD;&#xA;{&#xD;&#xA;&#x9;strTitle = &quot;JC&quot; + strTitle;&#xD;&#xA;}&#xD;&#xA;*/&#xD;&#xA;&#xD;&#xA;// （2021.11.09）JCコードをParsingするために区分字を入れる。&#xD;&#xA;// （2021.11.29）警察番号を処理。&#xD;&#xA;if (bPolice)&#xD;&#xA;{&#xD;&#xA;&#x9;strTitle = &quot;JC&quot; + strPoliceNumber + &quot;_&quot; + strTitle;&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{&#xD;&#xA;&#x9;strTitle = &quot;JC&quot; + strNumber + &quot;_&quot; + strTitle;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;// string strtmp = DateTime.Parse(strDate, &quot;yyyyMMdd&quot;, null).AddDays(1).ToString();&#xD;&#xA;// Console.WriteLine(&quot;&quot; + strtmp);&#xD;&#xA;&#xD;&#xA;for (int i = 0; i &lt; dtExtract.Rows.Count; i++)&#xD;&#xA;{&#x9;&#xD;&#xA;&#x9;// カレンダー日付&#xD;&#xA;&#x9;if (dtExtract.Rows[i][0].ToString().Equals(&quot;完了希望日&quot;))&#xD;&#xA;&#x9;{&#xD;&#xA;&#x9;&#x9;strDate = dtExtract.Rows[i][1].ToString().Replace(&quot;/&quot;, &quot;&quot;);&#xD;&#xA;&#x9;&#x9;return;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;if (dtExtract.Rows[i][0].ToString().Equals(&quot;利用開始希望日&quot;))&#xD;&#xA;&#x9;{&#xD;&#xA;&#x9;&#x9;strDate = dtExtract.Rows[i][1].ToString().Replace(&quot;/&quot;, &quot;&quot;);&#xD;&#xA;&#x9;&#x9;return;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;strDate = DateTime.Now.ToString(&quot;yyyyMMdd&quot;);&#xD;&#xA;" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="562,164" sap2010:WorkflowViewState.IdRef="InvokeCode_2" Language="CSharp">
+                                            <ui:InvokeCode ContinueOnError="{x:Null}" Code="strTitle = strTitle.Substring(strTitle.IndexOf(&quot;】&quot;) + 1).Trim();&#xA;&#xA;// （2021.04.07）言語が違う場合、データ抽出が失敗するので使わない。&#xA;// strUrl = &quot;https://&quot; + strUrl;&#xA;&#xA;// （2021.11.09）警察依頼を警察コードの代わりにJCコードを使うように現行。&#xA;/*&#xA;bool bFlag = false;&#xA;strID = strID.Replace(&quot;ID：&quot;, &quot;&quot;);&#xA;&#xA;try&#xA;{&#xA;&#x9;int.Parse(strID);&#xA;&#x9;bFlag = true;&#xA;}&#xA;catch (Exception ex)&#xA;{&#xA;&#x9;bFlag = false;&#xA;}&#xA;&#xA;strTitle = strID + strTitle;&#xA;if (bFlag)&#xA;{&#xA;&#x9;strTitle = &quot;JC&quot; + strTitle;&#xA;}&#xA;*/&#xA;&#xA;// （2021.11.09）JCコードをParsingするために区分字を入れる。&#xA;// （2021.11.29）警察番号を処理。&#xA;if (bPolice)&#xA;{&#xA;&#x9;strTitle = &quot;JC&quot; + strPoliceNumber + &quot;_&quot; + strTitle;&#xA;}&#xA;else&#xA;{&#xA;&#x9;strTitle = &quot;JC&quot; + strNumber + &quot;_&quot; + strTitle;&#xA;}&#xA;&#xA;// string strtmp = DateTime.Parse(strDate, &quot;yyyyMMdd&quot;, null).AddDays(1).ToString();&#xA;// Console.WriteLine(&quot;&quot; + strtmp);&#xA;&#xA;for (int i = 0; i &lt; dtExtract.Rows.Count; i++)&#xA;{&#x9;&#xA;&#x9;// カレンダー日付&#xA;&#x9;if (dtExtract.Rows[i][0].ToString().Equals(&quot;完了希望日&quot;))&#xA;&#x9;{&#xA;&#x9;&#x9;strDate = dtExtract.Rows[i][1].ToString().Replace(&quot;/&quot;, &quot;&quot;);&#xA;&#x9;&#x9;return;&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;if (dtExtract.Rows[i][0].ToString().Equals(&quot;利用開始希望日&quot;))&#xA;&#x9;{&#xA;&#x9;&#x9;strDate = dtExtract.Rows[i][1].ToString().Replace(&quot;/&quot;, &quot;&quot;);&#xA;&#x9;&#x9;return;&#xA;&#x9;}&#xA;}&#xA;&#xA;strDate = DateTime.Now.ToString(&quot;yyyyMMdd&quot;);&#xA;" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="562,164" sap2010:WorkflowViewState.IdRef="InvokeCode_2" Language="CSharp">
                                               <ui:InvokeCode.Arguments>
                                                 <InArgument x:TypeArguments="sd:DataTable" x:Key="dtExtract">
                                                   <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">dtExtract</CSharpValue>
@@ -1511,75 +1719,63 @@
                                     <Transition.To>
                                       <State x:Name="__ReferenceID3" DisplayName="State - Add Calendar" sap:VirtualizedContainerService.HintSize="170,61" sap2010:WorkflowViewState.IdRef="State_6">
                                         <State.Entry>
-                                          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="644,3460" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                                          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="1107,3865" sap2010:WorkflowViewState.IdRef="Sequence_46">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="602,3368" sap2010:WorkflowViewState.IdRef="OpenBrowser_4">
+                                            <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1065,3773" sap2010:WorkflowViewState.IdRef="OpenBrowser_4">
                                               <ui:OpenBrowser.Body>
                                                 <ActivityAction x:TypeArguments="x:Object">
                                                   <ActivityAction.Argument>
                                                     <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                                   </ActivityAction.Argument>
-                                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="568,3267" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1031,3672" sap2010:WorkflowViewState.IdRef="Sequence_45">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="526,1312" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                                                    <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="989,1717" sap2010:WorkflowViewState.IdRef="Sequence_42">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
-                                                      <ui:UiElementExists sap2010:Annotation.AnnotationText="10s" DisplayName="要素の存在を確認 'DIV'" sap:VirtualizedContainerService.HintSize="484,137" sap2010:WorkflowViewState.IdRef="UiElementExists_7">
+                                                      <ui:UiElementExists DisplayName="要素の存在を確認 'SPAN'" sap:VirtualizedContainerService.HintSize="947,106" sap2010:WorkflowViewState.IdRef="UiElementExists_11">
                                                         <ui:UiElementExists.Exists>
                                                           <OutArgument x:TypeArguments="x:Boolean">
-                                                            <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_52">bGoogleUser</CSharpReference>
+                                                            <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_142">bGoogleUser1</CSharpReference>
                                                           </OutArgument>
                                                         </ui:UiElementExists.Exists>
                                                         <ui:UiElementExists.Target>
-                                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="da61c808-bd09-47f6-9b09-0789cf3d23da" InformativeScreenshot="56a7ef48027f4fa0d149f4c3e959c24f" Selector="&lt;webctrl aaname='son_changhan@fk.cocone.co.jp' parentid='view_container' tag='DIV' /&gt;" TimeoutMS="10000">
+                                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="71e7602d-9994-416f-849d-2c0b6328f54c" InformativeScreenshot="cd5929c9eb9e8f33b16658812f643ed1" Selector="&lt;webctrl parentid='headingText' tag='SPAN' /&gt;">
+                                                            <ui:Target.TimeoutMS>
+                                                              <InArgument x:TypeArguments="x:Int32" />
+                                                            </ui:Target.TimeoutMS>
                                                             <ui:Target.WaitForReady>
                                                               <InArgument x:TypeArguments="ui:WaitForReady" />
                                                             </ui:Target.WaitForReady>
                                                           </ui:Target>
                                                         </ui:UiElementExists.Target>
-                                                        <sap:WorkflowViewStateService.ViewState>
-                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                          </scg:Dictionary>
-                                                        </sap:WorkflowViewStateService.ViewState>
                                                       </ui:UiElementExists>
-                                                      <If DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="484,1043" sap2010:WorkflowViewState.IdRef="If_11">
+                                                      <If DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="947,1479" sap2010:WorkflowViewState.IdRef="If_19">
                                                         <If.Condition>
                                                           <InArgument x:TypeArguments="x:Boolean">
-                                                            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_57">bGoogleUser</CSharpValue>
+                                                            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_137">bGoogleUser1</CSharpValue>
                                                           </InArgument>
                                                         </If.Condition>
                                                         <If.Then>
-                                                          <Sequence sap:VirtualizedContainerService.HintSize="376,867" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                                                          <Sequence sap:VirtualizedContainerService.HintSize="376,875" sap2010:WorkflowViewState.IdRef="Sequence_82">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
-                                                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="クリック 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_22" KeyModifiers="None" MouseButton="BTN_LEFT">
-                                                              <ui:Click.CursorPosition>
-                                                                <ui:CursorPosition Position="Center">
-                                                                  <ui:CursorPosition.OffsetX>
-                                                                    <InArgument x:TypeArguments="x:Int32" />
-                                                                  </ui:CursorPosition.OffsetX>
-                                                                  <ui:CursorPosition.OffsetY>
-                                                                    <InArgument x:TypeArguments="x:Int32" />
-                                                                  </ui:CursorPosition.OffsetY>
-                                                                </ui:CursorPosition>
-                                                              </ui:Click.CursorPosition>
-                                                              <ui:Click.Target>
-                                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5d1033c2-05a1-4bd0-9287-4bcbb4c4d91f" InformativeScreenshot="1b914fd154686b8227ea9bea6768fd6f" Selector="&lt;webctrl aaname='son_changhan@fk.cocone.co.jp' parentid='view_container' tag='DIV' /&gt;">
+                                                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="SendHotkey_36" Key="enter" KeyModifiers="None" SpecialKey="True">
+                                                              <ui:SendHotkey.Target>
+                                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="28455cf3-4689-44b7-b357-82172d13580f">
                                                                   <ui:Target.TimeoutMS>
                                                                     <InArgument x:TypeArguments="x:Int32" />
                                                                   </ui:Target.TimeoutMS>
@@ -1587,16 +1783,16 @@
                                                                     <InArgument x:TypeArguments="ui:WaitForReady" />
                                                                   </ui:Target.WaitForReady>
                                                                 </ui:Target>
-                                                              </ui:Click.Target>
-                                                            </ui:Click>
-                                                            <Delay sap2010:Annotation.AnnotationText="2s" DisplayName="待機" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,53" sap2010:WorkflowViewState.IdRef="Delay_22">
+                                                              </ui:SendHotkey.Target>
+                                                            </ui:SendHotkey>
+                                                            <Delay sap2010:Annotation.AnnotationText="2s" DisplayName="待機" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,53" sap2010:WorkflowViewState.IdRef="Delay_38">
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
                                                             </Delay>
-                                                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_18" Key="tab" KeyModifiers="None" SpecialKey="True">
+                                                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_37" Key="tab" KeyModifiers="None" SpecialKey="True">
                                                               <ui:SendHotkey.Target>
                                                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="62c0b1a7-9851-4123-94e9-4e00326c56fc" InformativeScreenshot="2c03f9354563cee38590b3684d6b54a9" Selector="&lt;webctrl css-selector='body' tag='BODY' /&gt;&lt;webctrl isleaf='1' tag='DIV' idx='1' /&gt;">
                                                                   <ui:Target.TimeoutMS>
@@ -1608,7 +1804,7 @@
                                                                 </ui:Target>
                                                               </ui:SendHotkey.Target>
                                                             </ui:SendHotkey>
-                                                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_19" Key="tab" KeyModifiers="None" SpecialKey="True">
+                                                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_38" Key="tab" KeyModifiers="None" SpecialKey="True">
                                                               <ui:SendHotkey.Target>
                                                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="62c0b1a7-9851-4123-94e9-4e00326c56fc" InformativeScreenshot="2c03f9354563cee38590b3684d6b54a9" Selector="&lt;webctrl css-selector='body' tag='BODY' /&gt;&lt;webctrl isleaf='1' tag='DIV' idx='1' /&gt;">
                                                                   <ui:Target.TimeoutMS>
@@ -1620,7 +1816,7 @@
                                                                 </ui:Target>
                                                               </ui:SendHotkey.Target>
                                                             </ui:SendHotkey>
-                                                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_20" Key="enter" KeyModifiers="None" SpecialKey="True">
+                                                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_39" Key="enter" KeyModifiers="None" SpecialKey="True">
                                                               <ui:SendHotkey.Target>
                                                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="62c0b1a7-9851-4123-94e9-4e00326c56fc" InformativeScreenshot="2c03f9354563cee38590b3684d6b54a9" Selector="&lt;webctrl css-selector='body' tag='BODY' /&gt;&lt;webctrl isleaf='1' tag='DIV' idx='1' /&gt;">
                                                                   <ui:Target.TimeoutMS>
@@ -1635,24 +1831,133 @@
                                                           </Sequence>
                                                         </If.Then>
                                                         <If.Else>
-                                                          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_41">
+                                                          <Sequence sap:VirtualizedContainerService.HintSize="526,1322" sap2010:WorkflowViewState.IdRef="Sequence_83">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
+                                                            <ui:UiElementExists sap2010:Annotation.AnnotationText="10s" DisplayName="要素の存在を確認 'DIV'" sap:VirtualizedContainerService.HintSize="484,137" sap2010:WorkflowViewState.IdRef="UiElementExists_7">
+                                                              <ui:UiElementExists.Exists>
+                                                                <OutArgument x:TypeArguments="x:Boolean">
+                                                                  <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_52">bGoogleUser2</CSharpReference>
+                                                                </OutArgument>
+                                                              </ui:UiElementExists.Exists>
+                                                              <ui:UiElementExists.Target>
+                                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="da61c808-bd09-47f6-9b09-0789cf3d23da" InformativeScreenshot="56a7ef48027f4fa0d149f4c3e959c24f" Selector="&lt;webctrl aaname='son_changhan@fk.cocone.co.jp' parentid='view_container' tag='DIV' /&gt;" TimeoutMS="10000">
+                                                                  <ui:Target.WaitForReady>
+                                                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                                  </ui:Target.WaitForReady>
+                                                                </ui:Target>
+                                                              </ui:UiElementExists.Target>
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                            </ui:UiElementExists>
+                                                            <If DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="484,1053" sap2010:WorkflowViewState.IdRef="If_11">
+                                                              <If.Condition>
+                                                                <InArgument x:TypeArguments="x:Boolean">
+                                                                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_57">bGoogleUser2</CSharpValue>
+                                                                </InArgument>
+                                                              </If.Condition>
+                                                              <If.Then>
+                                                                <Sequence sap:VirtualizedContainerService.HintSize="376,867" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                    </scg:Dictionary>
+                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="クリック 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_22" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                                                    <ui:Click.CursorPosition>
+                                                                      <ui:CursorPosition Position="Center">
+                                                                        <ui:CursorPosition.OffsetX>
+                                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                                        </ui:CursorPosition.OffsetX>
+                                                                        <ui:CursorPosition.OffsetY>
+                                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                                        </ui:CursorPosition.OffsetY>
+                                                                      </ui:CursorPosition>
+                                                                    </ui:Click.CursorPosition>
+                                                                    <ui:Click.Target>
+                                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5d1033c2-05a1-4bd0-9287-4bcbb4c4d91f" InformativeScreenshot="1b914fd154686b8227ea9bea6768fd6f" Selector="&lt;webctrl aaname='son_changhan@fk.cocone.co.jp' parentid='view_container' tag='DIV' /&gt;">
+                                                                        <ui:Target.TimeoutMS>
+                                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                                        </ui:Target.TimeoutMS>
+                                                                        <ui:Target.WaitForReady>
+                                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                                        </ui:Target.WaitForReady>
+                                                                      </ui:Target>
+                                                                    </ui:Click.Target>
+                                                                  </ui:Click>
+                                                                  <Delay sap2010:Annotation.AnnotationText="2s" DisplayName="待機" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,53" sap2010:WorkflowViewState.IdRef="Delay_22">
+                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                      </scg:Dictionary>
+                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                  </Delay>
+                                                                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_18" Key="tab" KeyModifiers="None" SpecialKey="True">
+                                                                    <ui:SendHotkey.Target>
+                                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="62c0b1a7-9851-4123-94e9-4e00326c56fc" InformativeScreenshot="2c03f9354563cee38590b3684d6b54a9" Selector="&lt;webctrl css-selector='body' tag='BODY' /&gt;&lt;webctrl isleaf='1' tag='DIV' idx='1' /&gt;">
+                                                                        <ui:Target.TimeoutMS>
+                                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                                        </ui:Target.TimeoutMS>
+                                                                        <ui:Target.WaitForReady>
+                                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                                        </ui:Target.WaitForReady>
+                                                                      </ui:Target>
+                                                                    </ui:SendHotkey.Target>
+                                                                  </ui:SendHotkey>
+                                                                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_19" Key="tab" KeyModifiers="None" SpecialKey="True">
+                                                                    <ui:SendHotkey.Target>
+                                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="62c0b1a7-9851-4123-94e9-4e00326c56fc" InformativeScreenshot="2c03f9354563cee38590b3684d6b54a9" Selector="&lt;webctrl css-selector='body' tag='BODY' /&gt;&lt;webctrl isleaf='1' tag='DIV' idx='1' /&gt;">
+                                                                        <ui:Target.TimeoutMS>
+                                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                                        </ui:Target.TimeoutMS>
+                                                                        <ui:Target.WaitForReady>
+                                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                                        </ui:Target.WaitForReady>
+                                                                      </ui:Target>
+                                                                    </ui:SendHotkey.Target>
+                                                                  </ui:SendHotkey>
+                                                                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'DIV'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_20" Key="enter" KeyModifiers="None" SpecialKey="True">
+                                                                    <ui:SendHotkey.Target>
+                                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="62c0b1a7-9851-4123-94e9-4e00326c56fc" InformativeScreenshot="2c03f9354563cee38590b3684d6b54a9" Selector="&lt;webctrl css-selector='body' tag='BODY' /&gt;&lt;webctrl isleaf='1' tag='DIV' idx='1' /&gt;">
+                                                                        <ui:Target.TimeoutMS>
+                                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                                        </ui:Target.TimeoutMS>
+                                                                        <ui:Target.WaitForReady>
+                                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                                        </ui:Target.WaitForReady>
+                                                                      </ui:Target>
+                                                                    </ui:SendHotkey.Target>
+                                                                  </ui:SendHotkey>
+                                                                </Sequence>
+                                                              </If.Then>
+                                                              <If.Else>
+                                                                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_41">
+                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                    </scg:Dictionary>
+                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                </Sequence>
+                                                              </If.Else>
+                                                            </If>
                                                           </Sequence>
                                                         </If.Else>
                                                       </If>
                                                     </Sequence>
-                                                    <Delay sap2010:Annotation.AnnotationText="2s" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="526,53" sap2010:WorkflowViewState.IdRef="Delay_23">
+                                                    <Delay sap2010:Annotation.AnnotationText="2s" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="989,53" sap2010:WorkflowViewState.IdRef="Delay_23">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
                                                     </Delay>
-                                                    <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'INPUT'" sap:VirtualizedContainerService.HintSize="526,134" sap2010:WorkflowViewState.IdRef="SetValue_5">
+                                                    <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'INPUT'" sap:VirtualizedContainerService.HintSize="989,134" sap2010:WorkflowViewState.IdRef="SetValue_5">
                                                       <ui:SetValue.Target>
                                                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="19597b2b-1c9e-41b7-bfc9-2521fdded900" InformativeScreenshot="297482a6c179bfecaf269e11574563fb" Selector="&lt;html app='chrome.exe' title='fk.cocone.co.jp - カレンダー - 予定の詳細' /&gt;&lt;webctrl tag='INPUT' type='text' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;label&amp;gt;div&amp;gt;div&amp;gt;input' /&gt;">
                                                           <ui:Target.TimeoutMS>
@@ -1669,7 +1974,7 @@
                                                         </InArgument>
                                                       </ui:SetValue.Text>
                                                     </ui:SetValue>
-                                                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey 'INPUT'" sap:VirtualizedContainerService.HintSize="526,152" sap2010:WorkflowViewState.IdRef="SendHotkey_21" Key="a" KeyModifiers="Ctrl">
+                                                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey 'INPUT'" sap:VirtualizedContainerService.HintSize="989,152" sap2010:WorkflowViewState.IdRef="SendHotkey_21" Key="a" KeyModifiers="Ctrl">
                                                       <ui:SendHotkey.Target>
                                                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="97a90b2a-aed8-48f5-b5c9-33a17aebba66" InformativeScreenshot="b67a873127c3fc97d8c0bf1dd3fdc6fc" Selector="&lt;html app='chrome.exe' title='fk.cocone.co.jp - カレンダー - 予定の詳細' /&gt;&lt;webctrl tag='INPUT' type='text' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;label&amp;gt;div&amp;gt;div&amp;gt;input' /&gt;">
                                                           <ui:Target.TimeoutMS>
@@ -2148,8 +2453,9 @@
                                         </State.Transitions>
                                         <State.Variables>
                                           <Variable x:TypeArguments="x:Boolean" Name="bSHC" />
-                                          <Variable x:TypeArguments="x:Boolean" Name="bGoogleUser" />
+                                          <Variable x:TypeArguments="x:Boolean" Name="bGoogleUser2" />
                                           <Variable x:TypeArguments="x:String" Name="strtmp" />
+                                          <Variable x:TypeArguments="x:Boolean" Name="bGoogleUser1" />
                                         </State.Variables>
                                       </State>
                                     </Transition.To>
@@ -2159,7 +2465,8 @@
                                   <Variable x:TypeArguments="x:Boolean" Name="bLoginJC" />
                                   <Variable x:TypeArguments="sd:DataTable" Name="dtExtract" />
                                   <Variable x:TypeArguments="x:String" Name="strID" />
-                                  <Variable x:TypeArguments="x:Boolean" Name="bGoogleUser" />
+                                  <Variable x:TypeArguments="x:Boolean" Name="bGoogleUser2" />
+                                  <Variable x:TypeArguments="x:Boolean" Name="bGoogleUser1" />
                                 </State.Variables>
                               </State>
                             </Transition.To>
@@ -2168,8 +2475,9 @@
                         <State.Variables>
                           <Variable x:TypeArguments="x:Int32" Name="iIndex" />
                           <Variable x:TypeArguments="x:Boolean" Name="bLoginJC" />
-                          <Variable x:TypeArguments="x:Boolean" Name="bGoogleUser" />
+                          <Variable x:TypeArguments="x:Boolean" Name="bGoogleUser2" />
                           <Variable x:TypeArguments="x:String" Name="strCopy" />
+                          <Variable x:TypeArguments="x:Boolean" Name="bGoogleUser1" />
                         </State.Variables>
                       </State>
                     </Transition.To>
