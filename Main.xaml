@@ -581,7 +581,7 @@
                           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bd2c69fb-db05-4d47-8a81-ed7491d91deb" InformativeScreenshot="4bdf84868155a5201f88e8756bbcf0ae" TimeoutMS="2000">
                             <ui:Target.Selector>
                               <InArgument x:TypeArguments="x:String">
-                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_102">String.Format("&lt;wnd app='slack.exe' cls='Chrome_WidgetWin_1' title='Slack*' /&gt;&lt;ctrl name='SCH TEST' role='property page' /&gt;&lt;ctrl name='jobcan*' role='grouping' /&gt;&lt;ctrl idx='{0}' name='ジョブカンWF/経費自動通知*' role='list item' /&gt;&lt;ctrl role='grouping' /&gt;", iIndex)</CSharpValue>
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_142">String.Format("&lt;wnd app='slack.exe' cls='Chrome_WidgetWin_1' title='Slack*' /&gt;&lt;ctrl name='sch6393' role='property page' /&gt;&lt;ctrl name='jobcan*' role='grouping' /&gt;&lt;ctrl idx='{0}' name='ジョブカンWF/経費自動通知*' role='list item' /&gt;&lt;ctrl role='grouping' /&gt;", iIndex)</CSharpValue>
                               </InArgument>
                             </ui:Target.Selector>
                             <ui:Target.WaitForReady>
@@ -791,7 +791,7 @@
                       <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_115">bRequest &amp;&amp; bPolice</CSharpValue>
                     </Transition.Condition>
                     <Transition.To>
-                      <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Jobcan申請番号が数字ではない場合。" DisplayName="ステート - Police" sap:VirtualizedContainerService.HintSize="1231,3953" sap2010:WorkflowViewState.IdRef="State_7">
+                      <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Jobcan申請番号が数字ではない場合。" DisplayName="ステート - Police" sap:VirtualizedContainerService.HintSize="240,92" sap2010:WorkflowViewState.IdRef="State_7">
                         <State.Entry>
                           <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="1185,3562" sap2010:WorkflowViewState.IdRef="Sequence_71">
                             <sap:WorkflowViewStateService.ViewState>
