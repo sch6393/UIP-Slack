@@ -97,47 +97,151 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="788,824" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="948,850" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <StateMachine InitialState="{x:Reference __ReferenceID5}" sap2010:Annotation.AnnotationText="(2021.11.29) intをstringに変更" DisplayName="State Machine" sap:VirtualizedContainerService.HintSize="746,732" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+    <StateMachine InitialState="{x:Reference __ReferenceID6}" sap2010:Annotation.AnnotationText="(2021.11.29) intをstringに変更&#xD;&#xA;(2022.01.06) bError ➞ iFlag&#xD;&#xA;0 : 正常, 1 : エラー, 2 : Google Relogin" DisplayName="State Machine" sap:VirtualizedContainerService.HintSize="906,758" sap2010:WorkflowViewState.IdRef="StateMachine_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
-          <x:Double x:Key="StateContainerWidth">712</x:Double>
+          <av:Point x:Key="ShapeLocation">200,2.5</av:Point>
+          <x:Double x:Key="StateContainerWidth">872</x:Double>
           <x:Double x:Key="StateContainerHeight">665.06</x:Double>
-          <av:PointCollection x:Key="ConnectorLocation">270,36.25 126.7,36.25 126.7,79.5</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">200,36.25 126.7,36.25 126.7,79.5</av:PointCollection>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <State x:Name="__ReferenceID0" DisplayName="State - Read Slack" sap:VirtualizedContainerService.HintSize="192,61" sap2010:WorkflowViewState.IdRef="State_1">
         <State.Entry>
-          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="558,2978" sap2010:WorkflowViewState.IdRef="Sequence_39">
+          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="695,3778" sap2010:WorkflowViewState.IdRef="Sequence_39">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="516,60" sap2010:WorkflowViewState.IdRef="Assign_7">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:Boolean">
-                  <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_49">bError</CSharpReference>
-                </OutArgument>
-              </Assign.To>
-              <Assign.Value>
+            <ui:MultipleAssign DisplayName="複数代入" sap:VirtualizedContainerService.HintSize="653,131" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
+              <ui:MultipleAssign.AssignOperations>
+                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Int32">
+                        <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_154">iFlag</CSharpReference>
+                      </OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Int32">
+                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_155">0;</CSharpValue>
+                      </InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_20">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Boolean">
+                        <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_150">bGoogleRelogin2</CSharpReference>
+                      </OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Boolean">
+                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_147">false;</CSharpValue>
+                      </InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                </scg:List>
+              </ui:MultipleAssign.AssignOperations>
+            </ui:MultipleAssign>
+            <If DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="653,310" sap2010:WorkflowViewState.IdRef="If_24">
+              <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
-                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">false;</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_169">DateTime.Today.DayOfWeek == System.DayOfWeek.Sunday</CSharpValue>
                 </InArgument>
-              </Assign.Value>
-            </Assign>
-            <ui:CommentOut sap2010:Annotation.AnnotationText="(2021.11.14) Change Activity (Mouse → Keyboard)" DisplayName="コメント アウト" sap:VirtualizedContainerService.HintSize="516,93" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+              </If.Condition>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_94">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">
+                        <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_151">bGoogleRelogin2</CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">
+                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_149">true;</CSharpValue>
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_95">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_22">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">
+                        <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_152">bGoogleRelogin1</CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">
+                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_151">false;</CSharpValue>
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Else>
+            </If>
+            <If DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="653,339" sap2010:WorkflowViewState.IdRef="If_25">
+              <If.Condition>
+                <InArgument x:TypeArguments="x:Boolean">
+                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_156">!bGoogleRelogin1 &amp;&amp; bGoogleRelogin2</CSharpValue>
+                </InArgument>
+              </If.Condition>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_100">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_24">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">
+                        <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_155">iFlag</CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">
+                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_157">2;</CSharpValue>
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_101">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <ui:CommentOut sap2010:Annotation.AnnotationText="(2021.11.14) Change Activity (Mouse → Keyboard)" DisplayName="コメント アウト" sap:VirtualizedContainerService.HintSize="653,93" sap2010:WorkflowViewState.IdRef="CommentOut_4">
               <ui:CommentOut.Body>
-                <Sequence DisplayName="無視されたアクティビティ" sap:VirtualizedContainerService.HintSize="480,1019" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                <Sequence DisplayName="無視されたアクティビティ" sap:VirtualizedContainerService.HintSize="480,984" sap2010:WorkflowViewState.IdRef="Sequence_64">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -188,8 +292,8 @@
                             </sap:WorkflowViewStateService.ViewState>
                             <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_10">
                               <Assign.To>
-                                <OutArgument x:TypeArguments="x:Boolean">
-                                  <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_55">bError</CSharpReference>
+                                <OutArgument x:TypeArguments="x:Int32">
+                                  <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_156">iFlag</CSharpReference>
                                 </OutArgument>
                               </Assign.To>
                               <Assign.Value>
@@ -247,7 +351,7 @@
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="304,151" sap2010:WorkflowViewState.IdRef="Sequence_52">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -255,8 +359,8 @@
                             </sap:WorkflowViewStateService.ViewState>
                             <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_11">
                               <Assign.To>
-                                <OutArgument x:TypeArguments="x:Boolean">
-                                  <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_56">bError</CSharpReference>
+                                <OutArgument x:TypeArguments="x:Int32">
+                                  <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_157">iFlag</CSharpReference>
                                 </OutArgument>
                               </Assign.To>
                               <Assign.Value>
@@ -287,7 +391,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:CommentOut>
-            <TryCatch DisplayName="トライ キャッチ" sap:VirtualizedContainerService.HintSize="516,341" sap2010:WorkflowViewState.IdRef="TryCatch_9">
+            <TryCatch DisplayName="トライ キャッチ" sap:VirtualizedContainerService.HintSize="653,341" sap2010:WorkflowViewState.IdRef="TryCatch_9">
               <TryCatch.Try>
                 <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'slack.exe Slack'" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="SendHotkey_28" Key="1" KeyModifiers="Ctrl">
                   <ui:SendHotkey.Target>
@@ -303,7 +407,7 @@
                 </ui:SendHotkey>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_7">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -322,13 +426,13 @@
                       </sap:WorkflowViewStateService.ViewState>
                       <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_12">
                         <Assign.To>
-                          <OutArgument x:TypeArguments="x:Boolean">
-                            <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_88">bError</CSharpReference>
+                          <OutArgument x:TypeArguments="x:Int32">
+                            <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_158">iFlag</CSharpReference>
                           </OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:Boolean">
-                            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_94">true;</CSharpValue>
+                          <InArgument x:TypeArguments="x:Int32">
+                            <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_167">1;</CSharpValue>
                           </InArgument>
                         </Assign.Value>
                       </Assign>
@@ -346,7 +450,7 @@
                 </Delay>
               </TryCatch.Finally>
             </TryCatch>
-            <TryCatch DisplayName="トライ キャッチ" sap:VirtualizedContainerService.HintSize="516,341" sap2010:WorkflowViewState.IdRef="TryCatch_11">
+            <TryCatch DisplayName="トライ キャッチ" sap:VirtualizedContainerService.HintSize="653,341" sap2010:WorkflowViewState.IdRef="TryCatch_11">
               <TryCatch.Try>
                 <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'slack.exe Slack'" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="SendHotkey_30" Key="pgdn" KeyModifiers="None" SpecialKey="True">
                   <ui:SendHotkey.Target>
@@ -373,7 +477,7 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_67">
+                    <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="304,149" sap2010:WorkflowViewState.IdRef="Sequence_67">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -381,13 +485,13 @@
                       </sap:WorkflowViewStateService.ViewState>
                       <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_14">
                         <Assign.To>
-                          <OutArgument x:TypeArguments="x:Boolean">
-                            <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_90">bError</CSharpReference>
+                          <OutArgument x:TypeArguments="x:Int32">
+                            <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_159">iFlag</CSharpReference>
                           </OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:Boolean">
-                            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_96">true;</CSharpValue>
+                          <InArgument x:TypeArguments="x:Int32">
+                            <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_158">1;</CSharpValue>
                           </InArgument>
                         </Assign.Value>
                       </Assign>
@@ -405,7 +509,7 @@
                 </Delay>
               </TryCatch.Finally>
             </TryCatch>
-            <TryCatch DisplayName="トライ キャッチ" sap:VirtualizedContainerService.HintSize="516,341" sap2010:WorkflowViewState.IdRef="TryCatch_10">
+            <TryCatch DisplayName="トライ キャッチ" sap:VirtualizedContainerService.HintSize="653,341" sap2010:WorkflowViewState.IdRef="TryCatch_10">
               <TryCatch.Try>
                 <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'slack.exe Slack'" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="SendHotkey_29" Key="2" KeyModifiers="Ctrl">
                   <ui:SendHotkey.Target>
@@ -432,7 +536,7 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_66">
+                    <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="304,149" sap2010:WorkflowViewState.IdRef="Sequence_66">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -440,13 +544,13 @@
                       </sap:WorkflowViewStateService.ViewState>
                       <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_13">
                         <Assign.To>
-                          <OutArgument x:TypeArguments="x:Boolean">
-                            <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_89">bError</CSharpReference>
+                          <OutArgument x:TypeArguments="x:Int32">
+                            <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_160">iFlag</CSharpReference>
                           </OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:Boolean">
-                            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_95">true;</CSharpValue>
+                          <InArgument x:TypeArguments="x:Int32">
+                            <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_159">1;</CSharpValue>
                           </InArgument>
                         </Assign.Value>
                       </Assign>
@@ -464,7 +568,7 @@
                 </Delay>
               </TryCatch.Finally>
             </TryCatch>
-            <TryCatch DisplayName="トライ キャッチ" sap:VirtualizedContainerService.HintSize="516,341" sap2010:WorkflowViewState.IdRef="TryCatch_12">
+            <TryCatch DisplayName="トライ キャッチ" sap:VirtualizedContainerService.HintSize="653,341" sap2010:WorkflowViewState.IdRef="TryCatch_12">
               <TryCatch.Try>
                 <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'slack.exe Slack'" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="SendHotkey_31" Key="pgdn" KeyModifiers="None" SpecialKey="True">
                   <ui:SendHotkey.Target>
@@ -491,7 +595,7 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_68">
+                    <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="304,149" sap2010:WorkflowViewState.IdRef="Sequence_68">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -499,13 +603,13 @@
                       </sap:WorkflowViewStateService.ViewState>
                       <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_15">
                         <Assign.To>
-                          <OutArgument x:TypeArguments="x:Boolean">
-                            <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_91">bError</CSharpReference>
+                          <OutArgument x:TypeArguments="x:Int32">
+                            <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_161">iFlag</CSharpReference>
                           </OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:Boolean">
-                            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_97">true;</CSharpValue>
+                          <InArgument x:TypeArguments="x:Int32">
+                            <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_160">1;</CSharpValue>
                           </InArgument>
                         </Assign.Value>
                       </Assign>
@@ -523,7 +627,7 @@
                 </Delay>
               </TryCatch.Finally>
             </TryCatch>
-            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="516,162" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="653,162" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
@@ -561,7 +665,7 @@
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
             </ui:MultipleAssign>
-            <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="516,834" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+            <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="653,834" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
               <ui:InterruptibleWhile.Body>
                 <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="480,669" sap2010:WorkflowViewState.IdRef="Sequence_59">
                   <sap:WorkflowViewStateService.ViewState>
@@ -654,7 +758,7 @@
                 <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_98">i &lt; 10</CSharpValue>
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
-            <Delay sap2010:Annotation.AnnotationText="2s" DisplayName="待機" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="516,53" sap2010:WorkflowViewState.IdRef="Delay_21">
+            <Delay sap2010:Annotation.AnnotationText="2s" DisplayName="待機" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="653,53" sap2010:WorkflowViewState.IdRef="Delay_21">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -673,21 +777,21 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <State.Transitions>
-          <Transition DisplayName="Next" sap:VirtualizedContainerService.HintSize="450,505" sap2010:WorkflowViewState.IdRef="Transition_4">
+          <Transition DisplayName="Next" sap:VirtualizedContainerService.HintSize="450,507" sap2010:WorkflowViewState.IdRef="Transition_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <av:PointCollection x:Key="ConnectorLocation">190.25,270.5 190.25,323.05 357.5,323.05</av:PointCollection>
+                <av:PointCollection x:Key="ConnectorLocation">190.25,270.5 190.25,363.05 347.5,363.05</av:PointCollection>
                 <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
                 <x:Int32 x:Key="DestConnectionPointIndex">41</x:Int32>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <Transition.Condition>
-              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_53">!bError</CSharpValue>
+              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_161">iFlag == 0</CSharpValue>
             </Transition.Condition>
             <Transition.To>
               <State x:Name="__ReferenceID2" DisplayName="State - Parsing Text" sap:VirtualizedContainerService.HintSize="185,61" sap2010:WorkflowViewState.IdRef="State_3">
                 <State.Entry>
-                  <TryCatch DisplayName="トライ キャッチ" sap:VirtualizedContainerService.HintSize="438,391" sap2010:WorkflowViewState.IdRef="TryCatch_14">
+                  <TryCatch DisplayName="トライ キャッチ" sap:VirtualizedContainerService.HintSize="434,383" sap2010:WorkflowViewState.IdRef="TryCatch_14">
                     <TryCatch.Try>
                       <ui:InvokeCode ContinueOnError="{x:Null}" Code="// for (int i = 0; i &lt; strarrSlackText.Length; i++)&#xA;// (2021.11.15) 7個がない時があるので計算方法を変更。&#xA;&#xA;// (2021.11.29) Jobcan申請番号が数字ではない場合。&#xA;bPolice = false;&#xA;&#xA;int iValue = 0;&#xA;for (int i = 0; i &lt; strarrSlackText.Length; i++)&#xA;{&#xA;&#x9;if (strarrSlackText[i] == null || strarrSlackText[i].Equals(&quot;&quot;))&#xA;&#x9;{&#xA;&#x9;&#x9;iValue = i;&#xA;&#x9;&#x9;// Console.WriteLine(&quot;&quot; + iValue);&#xA;&#x9;&#x9;break;&#xA;&#x9;}&#xA;}&#xA;&#xA;for (int i = iValue - 5; i &lt; iValue; i++)&#xA;{&#xA;&#x9;bool btmp = false;&#xA;&#x9;&#xA;&#x9;// Check Request&#xA;&#x9;if (strarrSlackText[i].Contains(&quot;申請の承認依頼が届いています。 &quot;))&#xA;&#x9;{&#xA;&#x9;&#x9;// Check Request Number&#xA;&#x9;&#x9;int iIndexRequest = strarrSlackText[i].IndexOf(&quot;申請番号&quot;);&#xA;&#x9;&#x9;// Console.WriteLine(&quot;&quot; + iIndexRequest);&#xA;&#x9;&#x9;string strtmp = strarrSlackText[i].Substring(iIndexRequest + 5);&#xA;&#x9;&#x9;// Console.WriteLine(&quot;&quot; + strtmp);&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;for (int j = 0; j &lt; strarrNumber.Length; j++)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;// Console.WriteLine(&quot;strarrNumber: &quot; + strarrNumber[j]);&#xA;&#x9;&#x9;&#x9;if (strarrNumber[j] == null || strarrNumber[j].Equals(&quot;&quot;))&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;if (strarrNumber[j].Equals(strtmp))&#xA;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;btmp = true;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;if (btmp)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;bRequest = false;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;bRequest = true;&#xA;&#x9;&#x9;&#x9;int itmp = 0;&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;try&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;itmp = int.Parse(strtmp);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;catch (Exception ex)&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;bPolice = true;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;if (bPolice)&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;strNumber = strtmp;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;strNumber = itmp.ToString();&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#x9;else&#xA;&#x9;{&#xA;&#x9;&#x9;bRequest = false;&#xA;&#x9;}&#xA;}&#xA;" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_9" Language="CSharp">
                         <ui:InvokeCode.Arguments>
@@ -710,10 +814,10 @@
                       </ui:InvokeCode>
                     </TryCatch.Try>
                     <TryCatch.Catches>
-                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_12">
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,221" sap2010:WorkflowViewState.IdRef="Catch`1_12">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
@@ -721,7 +825,7 @@
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="304,149" sap2010:WorkflowViewState.IdRef="Sequence_81">
+                          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_81">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -729,13 +833,13 @@
                             </sap:WorkflowViewStateService.ViewState>
                             <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_20">
                               <Assign.To>
-                                <OutArgument x:TypeArguments="x:Boolean">
-                                  <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_141">bError</CSharpReference>
+                                <OutArgument x:TypeArguments="x:Int32">
+                                  <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_162">iFlag</CSharpReference>
                                 </OutArgument>
                               </Assign.To>
                               <Assign.Value>
-                                <InArgument x:TypeArguments="x:Boolean">
-                                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_131">true;</CSharpValue>
+                                <InArgument x:TypeArguments="x:Int32">
+                                  <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_168">1;</CSharpValue>
                                 </InArgument>
                               </Assign.Value>
                             </Assign>
@@ -747,7 +851,7 @@
                 </State.Entry>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <av:Point x:Key="ShapeLocation">357.5,289.5</av:Point>
+                    <av:Point x:Key="ShapeLocation">347.5,329.5</av:Point>
                     <av:Size x:Key="ShapeSize">185,61</av:Size>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     <x:Double x:Key="StateContainerWidth">151</x:Double>
@@ -758,7 +862,7 @@
                   <Transition DisplayName="Next" sap:VirtualizedContainerService.HintSize="450,505" sap2010:WorkflowViewState.IdRef="Transition_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:PointCollection x:Key="ConnectorLocation">450,289.5 450,240 286.25,240</av:PointCollection>
+                        <av:PointCollection x:Key="ConnectorLocation">440,329.5 440,240 286.25,240</av:PointCollection>
                         <x:Int32 x:Key="SrcConnectionPointIndex">38</x:Int32>
                         <x:Int32 x:Key="DestConnectionPointIndex">36</x:Int32>
                       </scg:Dictionary>
@@ -776,13 +880,13 @@
                       </Delay>
                     </Transition.Action>
                     <Transition.Condition>
-                      <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_132">!bRequest || bError</CSharpValue>
+                      <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_162">!bRequest || iFlag == 0</CSharpValue>
                     </Transition.Condition>
                   </Transition>
                   <Transition DisplayName="Police" sap2010:WorkflowViewState.IdRef="Transition_14">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:PointCollection x:Key="ConnectorLocation">477.75,289.5 477.75,211.04 370,211.04 370,140 400,140</av:PointCollection>
+                        <av:PointCollection x:Key="ConnectorLocation">467.75,329.5 467.75,210 560,210</av:PointCollection>
                         <x:Int32 x:Key="SrcConnectionPointIndex">50</x:Int32>
                         <x:Int32 x:Key="DestConnectionPointIndex">37</x:Int32>
                       </scg:Dictionary>
@@ -1184,7 +1288,7 @@
                         </State.Entry>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <av:Point x:Key="ShapeLocation">400,94</av:Point>
+                            <av:Point x:Key="ShapeLocation">560,164</av:Point>
                             <av:Size x:Key="ShapeSize">240,92</av:Size>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             <x:Double x:Key="StateContainerWidth">206.5</x:Double>
@@ -1196,7 +1300,7 @@
                           <Transition DisplayName="Data Scraping" sap2010:WorkflowViewState.IdRef="Transition_13">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <av:PointCollection x:Key="ConnectorLocation">640,135.4 670,135.4 670,496.1 544.25,496.1</av:PointCollection>
+                                <av:PointCollection x:Key="ConnectorLocation">800,205.4 830,205.4 830,496.1 544.25,496.1</av:PointCollection>
                                 <x:Int32 x:Key="SrcConnectionPointIndex">32</x:Int32>
                                 <x:Int32 x:Key="DestConnectionPointIndex">44</x:Int32>
                               </scg:Dictionary>
@@ -1986,7 +2090,7 @@
                                                         </ui:Target>
                                                       </ui:SendHotkey.Target>
                                                     </ui:SendHotkey>
-                                                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey 'INPUT'" sap:VirtualizedContainerService.HintSize="526,152" sap2010:WorkflowViewState.IdRef="SendHotkey_22" Key="c" KeyModifiers="Ctrl">
+                                                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey 'INPUT'" sap:VirtualizedContainerService.HintSize="989,152" sap2010:WorkflowViewState.IdRef="SendHotkey_22" Key="c" KeyModifiers="Ctrl">
                                                       <ui:SendHotkey.Target>
                                                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="97a90b2a-aed8-48f5-b5c9-33a17aebba66" InformativeScreenshot="b67a873127c3fc97d8c0bf1dd3fdc6fc" Selector="&lt;html app='chrome.exe' title='fk.cocone.co.jp - カレンダー - 予定の詳細' /&gt;&lt;webctrl tag='INPUT' type='text' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;label&amp;gt;div&amp;gt;div&amp;gt;input' /&gt;">
                                                           <ui:Target.TimeoutMS>
@@ -1998,7 +2102,7 @@
                                                         </ui:Target>
                                                       </ui:SendHotkey.Target>
                                                     </ui:SendHotkey>
-                                                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey 'INPUT'" sap:VirtualizedContainerService.HintSize="526,152" sap2010:WorkflowViewState.IdRef="SendHotkey_23" Key="v" KeyModifiers="Ctrl">
+                                                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey 'INPUT'" sap:VirtualizedContainerService.HintSize="989,152" sap2010:WorkflowViewState.IdRef="SendHotkey_23" Key="v" KeyModifiers="Ctrl">
                                                       <ui:SendHotkey.Target>
                                                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="97a90b2a-aed8-48f5-b5c9-33a17aebba66" InformativeScreenshot="b67a873127c3fc97d8c0bf1dd3fdc6fc" Selector="&lt;html app='chrome.exe' title='fk.cocone.co.jp - カレンダー - 予定の詳細' /&gt;&lt;webctrl tag='INPUT' type='text' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;label&amp;gt;div&amp;gt;div&amp;gt;input' /&gt;">
                                                           <ui:Target.TimeoutMS>
@@ -2010,7 +2114,7 @@
                                                         </ui:Target>
                                                       </ui:SendHotkey.Target>
                                                     </ui:SendHotkey>
-                                                    <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'DIV'" sap:VirtualizedContainerService.HintSize="526,134" sap2010:WorkflowViewState.IdRef="SetValue_6">
+                                                    <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'DIV'" sap:VirtualizedContainerService.HintSize="989,134" sap2010:WorkflowViewState.IdRef="SetValue_6">
                                                       <ui:SetValue.Target>
                                                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="660a19a8-8e9a-4ed7-8c7a-791bcefa2a73" InformativeScreenshot="91a9a57695d78cd1dedb79d14f16d9b7" Selector="&lt;html app='chrome.exe' title='fk.cocone.co.jp - カレンダー - 予定の詳細' /&gt;&lt;webctrl aria-role='textbox' tag='DIV' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' /&gt;">
                                                           <ui:Target.TimeoutMS>
@@ -2027,7 +2131,7 @@
                                                         </InArgument>
                                                       </ui:SetValue.Text>
                                                     </ui:SetValue>
-                                                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="526,106" sap2010:WorkflowViewState.IdRef="Click_23" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="989,106" sap2010:WorkflowViewState.IdRef="Click_23" KeyModifiers="None" MouseButton="BTN_LEFT">
                                                       <ui:Click.CursorPosition>
                                                         <ui:CursorPosition Position="Center">
                                                           <ui:CursorPosition.OffsetX>
@@ -2049,9 +2153,9 @@
                                                         </ui:Target>
                                                       </ui:Click.Target>
                                                     </ui:Click>
-                                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="526,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="989,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
                                                       <ui:CommentOut.Body>
-                                                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="1021,1565" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                                                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="1021,1605" sap2010:WorkflowViewState.IdRef="Sequence_60">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2142,8 +2246,8 @@
                                                                                 </sap:WorkflowViewStateService.ViewState>
                                                                                 <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_9">
                                                                                   <Assign.To>
-                                                                                    <OutArgument x:TypeArguments="x:Boolean">
-                                                                                      <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_54">bError</CSharpReference>
+                                                                                    <OutArgument x:TypeArguments="x:Int32">
+                                                                                      <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_163">iFlag</CSharpReference>
                                                                                     </OutArgument>
                                                                                   </Assign.To>
                                                                                   <Assign.Value>
@@ -2202,7 +2306,7 @@
                                                           <If DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="979,512" sap2010:WorkflowViewState.IdRef="If_15">
                                                             <If.Condition>
                                                               <InArgument x:TypeArguments="x:Boolean">
-                                                                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_93">bError</CSharpValue>
+                                                                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_93">iFlag</CSharpValue>
                                                               </InArgument>
                                                             </If.Condition>
                                                             <If.Then>
@@ -2293,7 +2397,7 @@
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
                                                     </ui:CommentOut>
-                                                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="526,114" sap2010:WorkflowViewState.IdRef="SendHotkey_26" Key="down" KeyModifiers="None" SpecialKey="True">
+                                                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="989,114" sap2010:WorkflowViewState.IdRef="SendHotkey_26" Key="down" KeyModifiers="None" SpecialKey="True">
                                                       <ui:SendHotkey.Target>
                                                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="603d36cd-8aff-402c-9045-750dcd87eca0">
                                                           <ui:Target.TimeoutMS>
@@ -2305,7 +2409,7 @@
                                                         </ui:Target>
                                                       </ui:SendHotkey.Target>
                                                     </ui:SendHotkey>
-                                                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="526,114" sap2010:WorkflowViewState.IdRef="SendHotkey_27" Key="enter" KeyModifiers="None" SpecialKey="True">
+                                                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="989,114" sap2010:WorkflowViewState.IdRef="SendHotkey_27" Key="enter" KeyModifiers="None" SpecialKey="True">
                                                       <ui:SendHotkey.Target>
                                                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="6a8243a1-bf5e-4f2f-a498-c73d889ac0c1">
                                                           <ui:Target.TimeoutMS>
@@ -2317,7 +2421,7 @@
                                                         </ui:Target>
                                                       </ui:SendHotkey.Target>
                                                     </ui:SendHotkey>
-                                                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="526,106" sap2010:WorkflowViewState.IdRef="Click_31" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="989,106" sap2010:WorkflowViewState.IdRef="Click_31" KeyModifiers="None" MouseButton="BTN_LEFT">
                                                       <ui:Click.CursorPosition>
                                                         <ui:CursorPosition Position="Center">
                                                           <ui:CursorPosition.OffsetX>
@@ -2339,14 +2443,14 @@
                                                         </ui:Target>
                                                       </ui:Click.Target>
                                                     </ui:Click>
-                                                    <Delay sap2010:Annotation.AnnotationText="2s" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="526,53" sap2010:WorkflowViewState.IdRef="Delay_28">
+                                                    <Delay sap2010:Annotation.AnnotationText="2s" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="989,53" sap2010:WorkflowViewState.IdRef="Delay_28">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
                                                     </Delay>
-                                                    <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="526,22" sap2010:WorkflowViewState.IdRef="CloseTab_8" />
+                                                    <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="989,22" sap2010:WorkflowViewState.IdRef="CloseTab_8" />
                                                   </Sequence>
                                                 </ActivityAction>
                                               </ui:OpenBrowser.Body>
@@ -2447,7 +2551,7 @@
                                               <x:Reference>__ReferenceID0</x:Reference>
                                             </Transition.To>
                                             <Transition.Condition>
-                                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">bError</CSharpValue>
+                                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_163">iFlag == 1</CSharpValue>
                                             </Transition.Condition>
                                           </Transition>
                                         </State.Transitions>
@@ -2485,7 +2589,7 @@
                   <Transition DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="450,512" sap2010:WorkflowViewState.IdRef="Transition_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:PointCollection x:Key="ConnectorLocation">542.5,326.1 572.5,326.1 572.5,480.85 544.25,480.85</av:PointCollection>
+                        <av:PointCollection x:Key="ConnectorLocation">532.5,366.1 627.5,366.1 627.5,480.85 544.25,480.85</av:PointCollection>
                         <x:Int32 x:Key="SrcConnectionPointIndex">44</x:Int32>
                         <x:Int32 x:Key="DestConnectionPointIndex">24</x:Int32>
                       </scg:Dictionary>
@@ -2501,7 +2605,7 @@
               </State>
             </Transition.To>
           </Transition>
-          <Transition DisplayName="Error" sap:VirtualizedContainerService.HintSize="450,505" sap2010:WorkflowViewState.IdRef="Transition_11">
+          <Transition DisplayName="Error" sap:VirtualizedContainerService.HintSize="450,507" sap2010:WorkflowViewState.IdRef="Transition_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:PointCollection x:Key="ConnectorLocation">94.25,261.35 64.25,261.35 64.25,300.5 123.05000000000001,300.5 123.05000000000001,270.5</av:PointCollection>
@@ -2513,26 +2617,328 @@
               <x:Reference>__ReferenceID0</x:Reference>
             </Transition.To>
             <Transition.Condition>
-              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_39">bError</CSharpValue>
+              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_164">iFlag == 1</CSharpValue>
             </Transition.Condition>
+          </Transition>
+          <Transition DisplayName="Google Relogin" sap:VirtualizedContainerService.HintSize="450,507" sap2010:WorkflowViewState.IdRef="Transition_16">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:PointCollection x:Key="ConnectorLocation">238.25,209.5 238.25,90 464,90</av:PointCollection>
+                <x:Int32 x:Key="SrcConnectionPointIndex">58</x:Int32>
+                <x:Int32 x:Key="DestConnectionPointIndex">37</x:Int32>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Transition.Condition>
+              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_165">iFlag == 2</CSharpValue>
+            </Transition.Condition>
+            <Transition.To>
+              <State x:Name="__ReferenceID5" sap2010:Annotation.AnnotationText="毎週1回（日曜日）" DisplayName="ステート - Google Relogin" sap:VirtualizedContainerService.HintSize="212,95" sap2010:WorkflowViewState.IdRef="State_8">
+                <State.Entry>
+                  <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="509,3350" sap2010:WorkflowViewState.IdRef="Sequence_98">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="ブラウザーを開く" sap:VirtualizedContainerService.HintSize="467,1263" sap2010:WorkflowViewState.IdRef="OpenBrowser_5" Url="www.google.com">
+                      <ui:OpenBrowser.Body>
+                        <ActivityAction x:TypeArguments="x:Object">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1162" sap2010:WorkflowViewState.IdRef="Sequence_96">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Delay sap2010:Annotation.AnnotationText="10s" DisplayName="待機" Duration="00:00:10" sap:VirtualizedContainerService.HintSize="334,53" sap2010:WorkflowViewState.IdRef="Delay_43">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Delay>
+                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="SendHotkey_54" Key="tab" KeyModifiers="Shift" SpecialKey="True">
+                              <ui:SendHotkey.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="d573546f-6cd1-4c08-88ec-162a2211a5b3">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:SendHotkey.Target>
+                            </ui:SendHotkey>
+                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="SendHotkey_55" Key="enter" KeyModifiers="None" SpecialKey="True">
+                              <ui:SendHotkey.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="e2793cbc-fad6-4d86-a18f-cc2305b6a4a0">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:SendHotkey.Target>
+                            </ui:SendHotkey>
+                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="SendHotkey_56" Key="tab" KeyModifiers="None" SpecialKey="True">
+                              <ui:SendHotkey.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="ba87555a-6150-4bd8-a3b1-789f7aa8ff80">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:SendHotkey.Target>
+                            </ui:SendHotkey>
+                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="SendHotkey_57" Key="tab" KeyModifiers="None" SpecialKey="True">
+                              <ui:SendHotkey.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="c8fd29ba-a239-4267-a868-6fb8d4c9e3be">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:SendHotkey.Target>
+                            </ui:SendHotkey>
+                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="SendHotkey_58" Key="tab" KeyModifiers="None" SpecialKey="True">
+                              <ui:SendHotkey.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="04fd2056-d7d2-4882-a109-1458ef465f72">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:SendHotkey.Target>
+                            </ui:SendHotkey>
+                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="SendHotkey_59" Key="enter" KeyModifiers="None" SpecialKey="True">
+                              <ui:SendHotkey.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="c9b2be33-2f25-48f7-9f28-681561e3e0d3">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:SendHotkey.Target>
+                            </ui:SendHotkey>
+                            <Delay sap2010:Annotation.AnnotationText="10s" DisplayName="待機" Duration="00:00:10" sap:VirtualizedContainerService.HintSize="334,53" sap2010:WorkflowViewState.IdRef="Delay_44">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Delay>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:OpenBrowser.Body>
+                    </ui:OpenBrowser>
+                    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="ブラウザーにアタッチ 'chrome.exe ログイン'" sap:VirtualizedContainerService.HintSize="467,1555" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="ab3905c8180564e81a9170fd728d0c87" Selector="&lt;html app='chrome.exe' title='ログイン - Google アカウント' /&gt;">
+                      <ui:BrowserScope.Body>
+                        <ActivityAction x:TypeArguments="x:Object">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1409" sap2010:WorkflowViewState.IdRef="Sequence_102">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="SendHotkey_67" Key="tab" KeyModifiers="None" SpecialKey="True">
+                              <ui:SendHotkey.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="083292ea-3b49-4c64-a433-a64391db325a">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:SendHotkey.Target>
+                            </ui:SendHotkey>
+                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="SendHotkey_68" Key="enter" KeyModifiers="None" SpecialKey="True">
+                              <ui:SendHotkey.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="aaef05eb-84dc-4956-b513-c43393ddf86e">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:SendHotkey.Target>
+                            </ui:SendHotkey>
+                            <Delay sap2010:Annotation.AnnotationText="5s" DisplayName="待機" Duration="00:00:05" sap:VirtualizedContainerService.HintSize="334,53" sap2010:WorkflowViewState.IdRef="Delay_48">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Delay>
+                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="SendHotkey_69" Key="tab" KeyModifiers="None" SpecialKey="True">
+                              <ui:SendHotkey.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="51b89581-fbca-47cc-8a88-33751b79f8d0">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:SendHotkey.Target>
+                            </ui:SendHotkey>
+                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="SendHotkey_70" Key="enter" KeyModifiers="None" SpecialKey="True">
+                              <ui:SendHotkey.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="62e09cc2-8d41-4949-8f81-c7a5c2502651">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:SendHotkey.Target>
+                            </ui:SendHotkey>
+                            <Delay sap2010:Annotation.AnnotationText="5s" DisplayName="待機" Duration="00:00:05" sap:VirtualizedContainerService.HintSize="334,53" sap2010:WorkflowViewState.IdRef="Delay_49">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Delay>
+                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="SendHotkey_71" Key="tab" KeyModifiers="None" SpecialKey="True">
+                              <ui:SendHotkey.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="9e94331f-1a9b-447f-acdc-b1f8c2ba2f33">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:SendHotkey.Target>
+                            </ui:SendHotkey>
+                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="SendHotkey_72" Key="tab" KeyModifiers="None" SpecialKey="True">
+                              <ui:SendHotkey.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="17ebf36d-086d-4f4a-8db5-9b9014640730">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:SendHotkey.Target>
+                            </ui:SendHotkey>
+                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="SendHotkey_73" Key="enter" KeyModifiers="None" SpecialKey="True">
+                              <ui:SendHotkey.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="26f36a98-5d1e-40f7-819b-d12ad5f9a3f4">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:SendHotkey.Target>
+                            </ui:SendHotkey>
+                            <Delay sap2010:Annotation.AnnotationText="5s" DisplayName="待機" Duration="00:00:05" sap:VirtualizedContainerService.HintSize="334,53" sap2010:WorkflowViewState.IdRef="Delay_50">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Delay>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:BrowserScope.Body>
+                    </ui:BrowserScope>
+                    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="ブラウザーにアタッチ 'chrome.exe  Google'" sap:VirtualizedContainerService.HintSize="467,260" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="9031cf02257461ad512e828c133f1d2f" Selector="&lt;html app='chrome.exe' title='Google' /&gt;">
+                      <ui:BrowserScope.Body>
+                        <ActivityAction x:TypeArguments="x:Object">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_103">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:CloseTab Browser="{x:Null}" DisplayName="タブを閉じる" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_12" />
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:BrowserScope.Body>
+                    </ui:BrowserScope>
+                    <Assign DisplayName="代入" sap:VirtualizedContainerService.HintSize="467,60" sap2010:WorkflowViewState.IdRef="Assign_23">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Boolean">
+                          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_153">bGoogleRelogin1</CSharpReference>
+                        </OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Boolean">
+                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_153">true;</CSharpValue>
+                        </InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </State.Entry>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <av:Point x:Key="ShapeLocation">464,42.5</av:Point>
+                    <av:Size x:Key="ShapeSize">212,95</av:Size>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    <x:Double x:Key="StateContainerWidth">178</x:Double>
+                    <x:Double x:Key="StateContainerHeight">28.079999999999984</x:Double>
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <State.Transitions>
+                  <Transition DisplayName="Next" sap2010:WorkflowViewState.IdRef="Transition_15">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:PointCollection x:Key="ConnectorLocation">464,109 257.45000000000005,109 257.45000000000005,209.5</av:PointCollection>
+                        <x:Int32 x:Key="SrcConnectionPointIndex">53</x:Int32>
+                        <x:Int32 x:Key="DestConnectionPointIndex">66</x:Int32>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Transition.To>
+                      <x:Reference>__ReferenceID0</x:Reference>
+                    </Transition.To>
+                  </Transition>
+                </State.Transitions>
+              </State>
+            </Transition.To>
           </Transition>
         </State.Transitions>
         <State.Variables>
           <Variable x:TypeArguments="x:Int32" Name="i" />
           <Variable x:TypeArguments="x:Int32" Name="iIndex" />
+          <Variable x:TypeArguments="x:Boolean" Name="bGoogleRelogin2" />
         </State.Variables>
       </State>
       <x:Reference>__ReferenceID2</x:Reference>
-      <State x:Name="__ReferenceID5" DisplayName="State - Init" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_4">
+      <State x:Name="__ReferenceID6" DisplayName="State - Init" sap:VirtualizedContainerService.HintSize="709,2465" sap2010:WorkflowViewState.IdRef="State_4">
         <State.Entry>
-          <Sequence sap2010:Annotation.AnnotationText="(2021.11.29) フォルダ名とファイル名変数化" sap:VirtualizedContainerService.HintSize="663,2074" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence sap2010:Annotation.AnnotationText="(2021.11.29) フォルダ名とファイル名変数化" sap:VirtualizedContainerService.HintSize="663,2105" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MultipleAssign DisplayName="複数代入" sap:VirtualizedContainerService.HintSize="621,193" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
+            <ui:MultipleAssign DisplayName="複数代入" sap:VirtualizedContainerService.HintSize="621,224" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
@@ -2577,6 +2983,18 @@
                     </ui:AssignOperation.To>
                     <ui:AssignOperation.Value>
                       <InArgument x:TypeArguments="x:String">JobcanNumber.txt</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_19">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Boolean">
+                        <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_149">bGoogleRelogin1</CSharpReference>
+                      </OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Boolean">
+                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_146">false;</CSharpValue>
+                      </InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
                 </scg:List>
@@ -2761,6 +3179,7 @@
       <x:Reference>__ReferenceID1</x:Reference>
       <x:Reference>__ReferenceID3</x:Reference>
       <x:Reference>__ReferenceID4</x:Reference>
+      <x:Reference>__ReferenceID5</x:Reference>
       <StateMachine.Variables>
         <Variable x:TypeArguments="s:String[]" Name="strarrSlackText">
           <Variable.Default>
@@ -2781,9 +3200,9 @@
         <Variable x:TypeArguments="x:String" Name="strTitle" />
         <Variable x:TypeArguments="x:String" Name="strDate" />
         <Variable x:TypeArguments="x:String" Name="strURLCalendar" />
-        <Variable x:TypeArguments="x:Boolean" Name="bError">
+        <Variable x:TypeArguments="x:Int32" Name="iFlag">
           <Variable.Default>
-            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">false;</CSharpValue>
+            <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_166">0;</CSharpValue>
           </Variable.Default>
         </Variable>
         <Variable x:TypeArguments="x:String" Name="strNumber" />
@@ -2795,6 +3214,7 @@
           </Variable.Default>
         </Variable>
         <Variable x:TypeArguments="x:String" Name="strPoliceNumber" />
+        <Variable x:TypeArguments="x:Boolean" Name="bGoogleRelogin1" />
       </StateMachine.Variables>
     </StateMachine>
   </Sequence>
