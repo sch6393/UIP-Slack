@@ -115,9 +115,9 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <State x:Name="__ReferenceID0" DisplayName="State - Read Slack" sap:VirtualizedContainerService.HintSize="192,61" sap2010:WorkflowViewState.IdRef="State_1">
+      <State x:Name="__ReferenceID0" DisplayName="State - Read Slack" sap:VirtualizedContainerService.HintSize="741,4223" sap2010:WorkflowViewState.IdRef="State_1">
         <State.Entry>
-          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="695,3778" sap2010:WorkflowViewState.IdRef="Sequence_39">
+          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="695,3809" sap2010:WorkflowViewState.IdRef="Sequence_39">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -153,12 +153,17 @@
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
             </ui:MultipleAssign>
-            <If DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="653,310" sap2010:WorkflowViewState.IdRef="If_24">
+            <If sap2010:Annotation.AnnotationText="毎週1回" DisplayName="条件分岐" sap:VirtualizedContainerService.HintSize="653,341" sap2010:WorkflowViewState.IdRef="If_24">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_169">DateTime.Today.DayOfWeek == System.DayOfWeek.Sunday</CSharpValue>
                 </InArgument>
               </If.Condition>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
               <If.Then>
                 <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_94">
                   <sap:WorkflowViewStateService.ViewState>
@@ -407,7 +412,7 @@
                 </ui:SendHotkey>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_7">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -477,7 +482,7 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="304,149" sap2010:WorkflowViewState.IdRef="Sequence_67">
+                    <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_67">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -880,7 +885,7 @@
                       </Delay>
                     </Transition.Action>
                     <Transition.Condition>
-                      <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_162">!bRequest || iFlag == 0</CSharpValue>
+                      <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_170">!bRequest || iFlag == 1</CSharpValue>
                     </Transition.Condition>
                   </Transition>
                   <Transition DisplayName="Police" sap2010:WorkflowViewState.IdRef="Transition_14">
@@ -1815,7 +1820,7 @@
                                   <Transition DisplayName="Add Calendar" sap2010:WorkflowViewState.IdRef="Transition_8">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <av:PointCollection x:Key="ConnectorLocation">356.25,486.95 168.525,486.95 168.525,549.5</av:PointCollection>
+                                        <av:PointCollection x:Key="ConnectorLocation">356.25,486.95 128.5,486.95 128.5,519.5</av:PointCollection>
                                         <x:Int32 x:Key="SrcConnectionPointIndex">33</x:Int32>
                                         <x:Int32 x:Key="DestConnectionPointIndex">42</x:Int32>
                                       </scg:Dictionary>
@@ -2464,7 +2469,7 @@
                                         </State.Entry>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <av:Point x:Key="ShapeLocation">74.75,549.5</av:Point>
+                                            <av:Point x:Key="ShapeLocation">35,519.5</av:Point>
                                             <av:Size x:Key="ShapeSize">170,61</av:Size>
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                             <x:Double x:Key="StateContainerWidth">136.5</x:Double>
@@ -2475,7 +2480,7 @@
                                           <Transition DisplayName="Next" sap:VirtualizedContainerService.HintSize="587,1000" sap2010:WorkflowViewState.IdRef="Transition_10">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <av:PointCollection x:Key="ConnectorLocation">74.75,580 44.75,580 44.75,240 94.25,240</av:PointCollection>
+                                                <av:PointCollection x:Key="ConnectorLocation">35,550 5,550 5,240 94.25,240</av:PointCollection>
                                                 <x:Int32 x:Key="SrcConnectionPointIndex">37</x:Int32>
                                                 <x:Int32 x:Key="DestConnectionPointIndex">37</x:Int32>
                                               </scg:Dictionary>
@@ -2542,7 +2547,7 @@
                                           <Transition DisplayName="Error" sap:VirtualizedContainerService.HintSize="450,512" sap2010:WorkflowViewState.IdRef="Transition_12">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <av:PointCollection x:Key="ConnectorLocation">125.75,549.5 125.75,312 142.25,312 142.25,270.5</av:PointCollection>
+                                                <av:PointCollection x:Key="ConnectorLocation">86,519.5 86,393.00000000000006 142.25,393.00000000000006 142.25,270.5</av:PointCollection>
                                                 <x:Int32 x:Key="SrcConnectionPointIndex">22</x:Int32>
                                                 <x:Int32 x:Key="DestConnectionPointIndex">19</x:Int32>
                                               </scg:Dictionary>
@@ -2632,7 +2637,7 @@
               <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_165">iFlag == 2</CSharpValue>
             </Transition.Condition>
             <Transition.To>
-              <State x:Name="__ReferenceID5" sap2010:Annotation.AnnotationText="毎週1回（日曜日）" DisplayName="ステート - Google Relogin" sap:VirtualizedContainerService.HintSize="212,95" sap2010:WorkflowViewState.IdRef="State_8">
+              <State x:Name="__ReferenceID5" sap2010:Annotation.AnnotationText="毎週1回" DisplayName="ステート - Google Relogin" sap:VirtualizedContainerService.HintSize="212,95" sap2010:WorkflowViewState.IdRef="State_8">
                 <State.Entry>
                   <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="509,3350" sap2010:WorkflowViewState.IdRef="Sequence_98">
                     <sap:WorkflowViewStateService.ViewState>
@@ -2929,7 +2934,7 @@
         </State.Variables>
       </State>
       <x:Reference>__ReferenceID2</x:Reference>
-      <State x:Name="__ReferenceID6" DisplayName="State - Init" sap:VirtualizedContainerService.HintSize="709,2465" sap2010:WorkflowViewState.IdRef="State_4">
+      <State x:Name="__ReferenceID6" DisplayName="State - Init" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_4">
         <State.Entry>
           <Sequence sap2010:Annotation.AnnotationText="(2021.11.29) フォルダ名とファイル名変数化" sap:VirtualizedContainerService.HintSize="663,2105" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
