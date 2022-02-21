@@ -246,7 +246,7 @@
             </If>
             <ui:CommentOut sap2010:Annotation.AnnotationText="(2021.11.14) Change Activity (Mouse → Keyboard)" DisplayName="コメント アウト" sap:VirtualizedContainerService.HintSize="653,93" sap2010:WorkflowViewState.IdRef="CommentOut_4">
               <ui:CommentOut.Body>
-                <Sequence DisplayName="無視されたアクティビティ" sap:VirtualizedContainerService.HintSize="480,984" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                <Sequence DisplayName="無視されたアクティビティ" sap:VirtualizedContainerService.HintSize="480,1065" sap2010:WorkflowViewState.IdRef="Sequence_64">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -319,7 +319,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </Delay>
-                  <TryCatch DisplayName="トライ キャッチ" sap:VirtualizedContainerService.HintSize="438,414" sap2010:WorkflowViewState.IdRef="TryCatch_8">
+                  <TryCatch DisplayName="トライ キャッチ" sap:VirtualizedContainerService.HintSize="438,493" sap2010:WorkflowViewState.IdRef="TryCatch_8">
                     <TryCatch.Try>
                       <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'graphic  SCH TEST'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_21" KeyModifiers="None" MouseButton="BTN_LEFT">
                         <ui:Click.CursorPosition>
@@ -482,7 +482,7 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_67">
+                    <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="304,149" sap2010:WorkflowViewState.IdRef="Sequence_67">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -541,7 +541,7 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="304,149" sap2010:WorkflowViewState.IdRef="Sequence_66">
+                    <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_66">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -934,7 +934,7 @@
                     <Transition.To>
                       <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Jobcan申請番号が数字ではない場合。" DisplayName="ステート - Police" sap:VirtualizedContainerService.HintSize="240,92" sap2010:WorkflowViewState.IdRef="State_7">
                         <State.Entry>
-                          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="1185,3562" sap2010:WorkflowViewState.IdRef="Sequence_71">
+                          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="1185,3602" sap2010:WorkflowViewState.IdRef="Sequence_71">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -987,7 +987,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </Delay>
-                            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="ブラウザーにアタッチ 'chrome.exe  ジョブカン共通IDログ...'" sap:VirtualizedContainerService.HintSize="1143,3027" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="0a407c05d12bdfccd497c5867ee8a635" Selector="&lt;html app='chrome.exe' title='ジョブカン*' /&gt;">
+                            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="ブラウザーにアタッチ 'chrome.exe  ジョブカン共通IDログ...'" sap:VirtualizedContainerService.HintSize="1143,3067" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="0a407c05d12bdfccd497c5867ee8a635" Selector="&lt;html app='chrome.exe' title='ジョブカン*' /&gt;">
                               <ui:BrowserScope.Body>
                                 <ActivityAction x:TypeArguments="x:Object">
                                   <ActivityAction.Argument>
@@ -2512,7 +2512,7 @@
                                           <Transition DisplayName="Next" sap:VirtualizedContainerService.HintSize="587,1000" sap2010:WorkflowViewState.IdRef="Transition_10">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <av:PointCollection x:Key="ConnectorLocation">65,750 35,750 35,310.5 84,310.5</av:PointCollection>
+                                                <av:PointCollection x:Key="ConnectorLocation">65,750 35,750 35,310 84,310</av:PointCollection>
                                                 <x:Int32 x:Key="SrcConnectionPointIndex">37</x:Int32>
                                                 <x:Int32 x:Key="DestConnectionPointIndex">37</x:Int32>
                                               </scg:Dictionary>
@@ -2626,7 +2626,7 @@
                   <Transition DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="450,512" sap2010:WorkflowViewState.IdRef="Transition_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:PointCollection x:Key="ConnectorLocation">522.5,566.1 674.0000000000002,566.1 674.0000000000002,640.85 644,640.85</av:PointCollection>
+                        <av:PointCollection x:Key="ConnectorLocation">522.5,566.1 674,566.1 674,640.85 644,640.85</av:PointCollection>
                         <x:Int32 x:Key="SrcConnectionPointIndex">44</x:Int32>
                         <x:Int32 x:Key="DestConnectionPointIndex">24</x:Int32>
                       </scg:Dictionary>
@@ -2684,7 +2684,7 @@
           <Transition DisplayName="Google Relogin" sap:VirtualizedContainerService.HintSize="450,507" sap2010:WorkflowViewState.IdRef="Transition_16">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <av:PointCollection x:Key="ConnectorLocation">232.5,249.5 232.5,110 604,110</av:PointCollection>
+                <av:PointCollection x:Key="ConnectorLocation">231.75,249.5 231.75,110 334,110</av:PointCollection>
                 <x:Int32 x:Key="SrcConnectionPointIndex">58</x:Int32>
                 <x:Int32 x:Key="DestConnectionPointIndex">37</x:Int32>
               </scg:Dictionary>
@@ -2981,7 +2981,7 @@
                 </State.Entry>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <av:Point x:Key="ShapeLocation">604,62.5</av:Point>
+                    <av:Point x:Key="ShapeLocation">334,62.5</av:Point>
                     <av:Size x:Key="ShapeSize">212,95</av:Size>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     <x:Double x:Key="StateContainerWidth">178</x:Double>
@@ -2993,7 +2993,7 @@
                   <Transition DisplayName="Next" sap2010:WorkflowViewState.IdRef="Transition_15">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:PointCollection x:Key="ConnectorLocation">604,129 252.3,129 252.3,249.5</av:PointCollection>
+                        <av:PointCollection x:Key="ConnectorLocation">334,129 251.45000000000002,129 251.45000000000002,249.5</av:PointCollection>
                         <x:Int32 x:Key="SrcConnectionPointIndex">53</x:Int32>
                         <x:Int32 x:Key="DestConnectionPointIndex">66</x:Int32>
                       </scg:Dictionary>
@@ -3009,7 +3009,7 @@
           <Transition DisplayName="Slack Reload" sap2010:WorkflowViewState.IdRef="Transition_17">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <av:PointCollection x:Key="ConnectorLocation">281,291.85 311,291.85 311,313 595,313</av:PointCollection>
+                <av:PointCollection x:Key="ConnectorLocation">281,291.85 595,291.85 595,123 625,123</av:PointCollection>
                 <x:Int32 x:Key="SrcConnectionPointIndex">24</x:Int32>
                 <x:Int32 x:Key="DestConnectionPointIndex">57</x:Int32>
               </scg:Dictionary>
@@ -3018,15 +3018,15 @@
               <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_176">iFlag == 3</CSharpValue>
             </Transition.Condition>
             <Transition.To>
-              <State x:Name="__ReferenceID6" sap2010:Annotation.AnnotationText="SlackのReloadメッセージがある時" DisplayName="ステート - Reload Slack" sap:VirtualizedContainerService.HintSize="210,92" sap2010:WorkflowViewState.IdRef="State_9">
+              <State x:Name="__ReferenceID6" sap2010:Annotation.AnnotationText="SlackのReloadメッセージがある時" DisplayName="ステート - Reload Slack" sap:VirtualizedContainerService.HintSize="602,2001" sap2010:WorkflowViewState.IdRef="State_9">
                 <State.Entry>
-                  <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="476,845" sap2010:WorkflowViewState.IdRef="Sequence_107">
+                  <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="556,1610" sap2010:WorkflowViewState.IdRef="Sequence_107">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="ウィンドウにアタッチ 'slack.exe Slack'" sap:VirtualizedContainerService.HintSize="434,660" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="c87e97d90b507c9c1bd6b1c271f03d35" Selector="&lt;wnd app='slack.exe' cls='#32770' title='Slack*' /&gt;">
+                    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="ウィンドウにアタッチ 'slack.exe Slack'" sap:VirtualizedContainerService.HintSize="514,660" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="c87e97d90b507c9c1bd6b1c271f03d35" Selector="&lt;wnd app='slack.exe' cls='#32770' title='Slack*' /&gt;">
                       <ui:WindowScope.Body>
                         <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>
@@ -3078,18 +3078,87 @@
                         </ActivityAction>
                       </ui:WindowScope.Body>
                     </ui:WindowScope>
-                    <Delay sap2010:Annotation.AnnotationText="10s" DisplayName="待機" Duration="00:00:10" sap:VirtualizedContainerService.HintSize="434,53" sap2010:WorkflowViewState.IdRef="Delay_51">
+                    <Delay sap2010:Annotation.AnnotationText="30s" DisplayName="待機" Duration="00:00:30" sap:VirtualizedContainerService.HintSize="514,53" sap2010:WorkflowViewState.IdRef="Delay_51">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </Delay>
+                    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="ウィンドウにアタッチ 'slack.exe Slack'" sap:VirtualizedContainerService.HintSize="514,725" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="6ddd4eab4fc2ba21d93125d05a7dcd38" Selector="&lt;wnd app='slack.exe' cls='Chrome_WidgetWin_1' title='Slack*' /&gt;">
+                      <ui:WindowScope.Body>
+                        <ActivityAction x:TypeArguments="x:Object">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="480,579" sap2010:WorkflowViewState.IdRef="Sequence_108">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="ホットキーを押下 'slack.exe Slack'" sap:VirtualizedContainerService.HintSize="438,114" sap2010:WorkflowViewState.IdRef="SendHotkey_79" Key="1" KeyModifiers="Ctrl">
+                              <ui:SendHotkey.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ae5ce446-9a82-4b7e-96de-26b67e42b8b7" Selector="&lt;wnd app='slack.exe' cls='Chrome_WidgetWin_1' title='Slack*' /&gt;">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:SendHotkey.Target>
+                            </ui:SendHotkey>
+                            <TryCatch DisplayName="トライ キャッチ" sap:VirtualizedContainerService.HintSize="438,333" sap2010:WorkflowViewState.IdRef="TryCatch_15">
+                              <TryCatch.Try>
+                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="クリック 'grouping'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_37" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition Position="Center">
+                                      <ui:CursorPosition.OffsetX>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetX>
+                                      <ui:CursorPosition.OffsetY>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetY>
+                                    </ui:CursorPosition>
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="543047bf-91e5-4ca3-9975-69a8743230b9" InformativeScreenshot="88d54bd7648d794a240ee2e92a5b4296" Selector="&lt;ctrl name='Slack*' role='document' /&gt;&lt;ctrl name='jobcan(비공개)' role='outline item' /&gt;&lt;ctrl idx='2' role='grouping' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                              </TryCatch.Try>
+                              <TryCatch.Catches>
+                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_13">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ActivityAction x:TypeArguments="s:Exception">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                    </ActivityAction.Argument>
+                                  </ActivityAction>
+                                </Catch>
+                              </TryCatch.Catches>
+                            </TryCatch>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:WindowScope.Body>
+                    </ui:WindowScope>
                   </Sequence>
                 </State.Entry>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <av:Point x:Key="ShapeLocation">595,244</av:Point>
+                    <av:Point x:Key="ShapeLocation">625,54</av:Point>
                     <av:Size x:Key="ShapeSize">210,92</av:Size>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     <x:Double x:Key="StateContainerWidth">175.85685611994313</x:Double>
@@ -3101,7 +3170,7 @@
                   <Transition DisplayName="Next" sap2010:WorkflowViewState.IdRef="Transition_18">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:PointCollection x:Key="ConnectorLocation">595,294.6 565,294.6 565,273.7 281,273.7</av:PointCollection>
+                        <av:PointCollection x:Key="ConnectorLocation">625,104.6 577,104.6 577,273.7 281,273.7</av:PointCollection>
                         <x:Int32 x:Key="SrcConnectionPointIndex">41</x:Int32>
                         <x:Int32 x:Key="DestConnectionPointIndex">12</x:Int32>
                       </scg:Dictionary>
@@ -3354,7 +3423,7 @@
           <Transition DisplayName="Next" sap2010:WorkflowViewState.IdRef="Transition_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <av:PointCollection x:Key="ConnectorLocation">120,140.5 120,170.5 183,170.5 183,249.5</av:PointCollection>
+                <av:PointCollection x:Key="ConnectorLocation">120,140.5 120,170.5 182.5,170.5 182.5,249.5</av:PointCollection>
                 <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
                 <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
               </scg:Dictionary>
