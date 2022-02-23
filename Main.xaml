@@ -97,7 +97,7 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="948,850" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="959,1010" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -932,7 +932,7 @@
                       <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_115">bRequest &amp;&amp; bPolice</CSharpValue>
                     </Transition.Condition>
                     <Transition.To>
-                      <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Jobcan申請番号が数字ではない場合。" DisplayName="ステート - Police" sap:VirtualizedContainerService.HintSize="240,92" sap2010:WorkflowViewState.IdRef="State_7">
+                      <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Jobcan申請番号が数字ではない場合。" DisplayName="ステート - Police" sap:VirtualizedContainerService.HintSize="1231,3993" sap2010:WorkflowViewState.IdRef="State_7">
                         <State.Entry>
                           <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="1185,3602" sap2010:WorkflowViewState.IdRef="Sequence_71">
                             <sap:WorkflowViewStateService.ViewState>
@@ -968,7 +968,7 @@
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ed08ef36-3dc5-40c0-a58e-db4ecf17ff4f" InformativeScreenshot="8a924f4b2afd68f6f5f5b77d60e11e4b">
                                   <ui:Target.Selector>
                                     <InArgument x:TypeArguments="x:String">
-                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_172">String.Format("&lt;wnd app='slack.exe' cls='Chrome_WidgetWin_1' title='Slack | jobcan | sch6393' /&gt;&lt;ctrl name='Slack*' role='document' /&gt;&lt;ctrl name='jobcan*' role='grouping' /&gt;&lt;ctrl idx='{0}' name='ジョブカンWF/経費自動通知. @sch6393 申請の承認依頼が届いています。*' role='list item' /&gt;&lt;ctrl name='詳細' role='link' /&gt;", iIndex)</CSharpValue>
+                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_177">String.Format("&lt;wnd app='slack.exe' cls='Chrome_WidgetWin_1' title='Slack | jobcan | sch6393' /&gt;&lt;ctrl name='Slack*' role='document' /&gt;&lt;ctrl name='jobcan*' role='grouping' /&gt;&lt;ctrl idx='{0}' name='ジョブカンWF/経費自動通知. @sch6393 申請の承認依頼が届いています。*' role='list item' /&gt;&lt;ctrl name='詳細' role='link' /&gt;", iIndex)</CSharpValue>
                                     </InArgument>
                                   </ui:Target.Selector>
                                   <ui:Target.TimeoutMS>
@@ -2695,19 +2695,19 @@
             <Transition.To>
               <State x:Name="__ReferenceID5" sap2010:Annotation.AnnotationText="毎週1回" DisplayName="ステート - Google Relogin" sap:VirtualizedContainerService.HintSize="212,95" sap2010:WorkflowViewState.IdRef="State_8">
                 <State.Entry>
-                  <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="509,3658" sap2010:WorkflowViewState.IdRef="Sequence_98">
+                  <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="509,3504" sap2010:WorkflowViewState.IdRef="Sequence_98">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="ブラウザーを開く" sap:VirtualizedContainerService.HintSize="467,1571" sap2010:WorkflowViewState.IdRef="OpenBrowser_5" Url="www.google.com">
+                    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="ブラウザーを開く" sap:VirtualizedContainerService.HintSize="467,1417" sap2010:WorkflowViewState.IdRef="OpenBrowser_5" Url="www.google.com">
                       <ui:OpenBrowser.Body>
                         <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1470" sap2010:WorkflowViewState.IdRef="Sequence_96">
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1316" sap2010:WorkflowViewState.IdRef="Sequence_96">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2721,18 +2721,6 @@
                               </sap:WorkflowViewStateService.ViewState>
                             </Delay>
                             <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="SendHotkey_54" Key="tab" KeyModifiers="Shift" SpecialKey="True">
-                              <ui:SendHotkey.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="d573546f-6cd1-4c08-88ec-162a2211a5b3">
-                                  <ui:Target.TimeoutMS>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:Target.TimeoutMS>
-                                  <ui:Target.WaitForReady>
-                                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                                  </ui:Target.WaitForReady>
-                                </ui:Target>
-                              </ui:SendHotkey.Target>
-                            </ui:SendHotkey>
-                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="SendHotkey_74" Key="tab" KeyModifiers="Shift" SpecialKey="True">
                               <ui:SendHotkey.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="d573546f-6cd1-4c08-88ec-162a2211a5b3">
                                   <ui:Target.TimeoutMS>
@@ -3018,7 +3006,7 @@
               <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_176">iFlag == 3</CSharpValue>
             </Transition.Condition>
             <Transition.To>
-              <State x:Name="__ReferenceID6" sap2010:Annotation.AnnotationText="SlackのReloadメッセージがある時" DisplayName="ステート - Reload Slack" sap:VirtualizedContainerService.HintSize="602,2001" sap2010:WorkflowViewState.IdRef="State_9">
+              <State x:Name="__ReferenceID6" sap2010:Annotation.AnnotationText="SlackのReloadメッセージがある時" DisplayName="ステート - Reload Slack" sap:VirtualizedContainerService.HintSize="210,92" sap2010:WorkflowViewState.IdRef="State_9">
                 <State.Entry>
                   <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="556,1610" sap2010:WorkflowViewState.IdRef="Sequence_107">
                     <sap:WorkflowViewStateService.ViewState>
@@ -3170,7 +3158,7 @@
                   <Transition DisplayName="Next" sap2010:WorkflowViewState.IdRef="Transition_18">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:PointCollection x:Key="ConnectorLocation">625,104.6 577,104.6 577,273.7 281,273.7</av:PointCollection>
+                        <av:PointCollection x:Key="ConnectorLocation">625,104.6 595,104.6 595,273.7 281,273.7</av:PointCollection>
                         <x:Int32 x:Key="SrcConnectionPointIndex">41</x:Int32>
                         <x:Int32 x:Key="DestConnectionPointIndex">12</x:Int32>
                       </scg:Dictionary>
