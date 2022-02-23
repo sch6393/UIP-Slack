@@ -932,9 +932,9 @@
                       <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_115">bRequest &amp;&amp; bPolice</CSharpValue>
                     </Transition.Condition>
                     <Transition.To>
-                      <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Jobcan申請番号が数字ではない場合。" DisplayName="ステート - Police" sap:VirtualizedContainerService.HintSize="1231,3993" sap2010:WorkflowViewState.IdRef="State_7">
+                      <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Jobcan申請番号が数字ではない場合。" DisplayName="ステート - Police" sap:VirtualizedContainerService.HintSize="240,92" sap2010:WorkflowViewState.IdRef="State_7">
                         <State.Entry>
-                          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="1185,3602" sap2010:WorkflowViewState.IdRef="Sequence_71">
+                          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="1185,3562" sap2010:WorkflowViewState.IdRef="Sequence_71">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -953,7 +953,7 @@
                                 </InArgument>
                               </ui:InvokeCode.Arguments>
                             </ui:InvokeCode>
-                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="クリック 'link  詳細'" sap:VirtualizedContainerService.HintSize="1143,106" sap2010:WorkflowViewState.IdRef="Click_32" KeyModifiers="None" MouseButton="BTN_LEFT">
+                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_DOUBLE" DisplayName="クリック 'link  詳細'" sap:VirtualizedContainerService.HintSize="1143,106" sap2010:WorkflowViewState.IdRef="Click_32" KeyModifiers="None" MouseButton="BTN_LEFT">
                               <ui:Click.CursorPosition>
                                 <ui:CursorPosition Position="Center">
                                   <ui:CursorPosition.OffsetX>
@@ -980,14 +980,14 @@
                                 </ui:Target>
                               </ui:Click.Target>
                             </ui:Click>
-                            <Delay sap2010:Annotation.AnnotationText="2s" DisplayName="待機" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="1143,53" sap2010:WorkflowViewState.IdRef="Delay_35">
+                            <Delay sap2010:Annotation.AnnotationText="20s" DisplayName="待機" Duration="00:00:20" sap:VirtualizedContainerService.HintSize="1143,53" sap2010:WorkflowViewState.IdRef="Delay_35">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </Delay>
-                            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="ブラウザーにアタッチ 'chrome.exe  ジョブカン共通IDログ...'" sap:VirtualizedContainerService.HintSize="1143,3067" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="0a407c05d12bdfccd497c5867ee8a635" Selector="&lt;html app='chrome.exe' title='ジョブカン*' /&gt;">
+                            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="ブラウザーにアタッチ 'chrome.exe  ジョブカン共通IDログ...'" sap:VirtualizedContainerService.HintSize="1143,3027" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="0a407c05d12bdfccd497c5867ee8a635" Selector="&lt;html app='chrome.exe' title='ジョブカン*' /&gt;">
                               <ui:BrowserScope.Body>
                                 <ActivityAction x:TypeArguments="x:Object">
                                   <ActivityAction.Argument>
@@ -1278,7 +1278,7 @@
                                         </Sequence>
                                       </If.Else>
                                     </If>
-                                    <Delay sap2010:Annotation.AnnotationText="2s" DisplayName="待機" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="1067,53" sap2010:WorkflowViewState.IdRef="Delay_37">
+                                    <Delay sap2010:Annotation.AnnotationText="20s" DisplayName="待機" Duration="00:00:20" sap:VirtualizedContainerService.HintSize="1067,53" sap2010:WorkflowViewState.IdRef="Delay_37">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -3158,7 +3158,7 @@
                   <Transition DisplayName="Next" sap2010:WorkflowViewState.IdRef="Transition_18">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:PointCollection x:Key="ConnectorLocation">625,104.6 595,104.6 595,273.7 281,273.7</av:PointCollection>
+                        <av:PointCollection x:Key="ConnectorLocation">625,104.6 569,104.6 569,273.7 281,273.7</av:PointCollection>
                         <x:Int32 x:Key="SrcConnectionPointIndex">41</x:Int32>
                         <x:Int32 x:Key="DestConnectionPointIndex">12</x:Int32>
                       </scg:Dictionary>
