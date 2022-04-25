@@ -934,7 +934,7 @@
                       <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_115">bRequest &amp;&amp; bPolice</CSharpValue>
                     </Transition.Condition>
                     <Transition.To>
-                      <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Jobcan申請番号が数字ではない場合。" DisplayName="ステート - Police" sap:VirtualizedContainerService.HintSize="240,92" sap2010:WorkflowViewState.IdRef="State_7">
+                      <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Jobcan申請番号が数字ではない場合。" DisplayName="ステート - Police" sap:VirtualizedContainerService.HintSize="1231,3953" sap2010:WorkflowViewState.IdRef="State_7">
                         <State.Entry>
                           <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="1185,3562" sap2010:WorkflowViewState.IdRef="Sequence_71">
                             <sap:WorkflowViewStateService.ViewState>
@@ -942,7 +942,7 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:InvokeCode ContinueOnError="{x:Null}" Code="iIndex = 1;&#xA;for (int i = 0; i &lt; strarrSlackText.Length; i++)&#xA;{&#xA;&#x9;if (strarrSlackText[i].Contains(strNumber))&#xA;&#x9;{&#xA;&#x9;&#x9;// Console.WriteLine(&quot;&quot; + iIndex);&#xA;&#x9;&#x9;break;&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;iIndex++;&#xA;}&#xA;" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="1143,164" sap2010:WorkflowViewState.IdRef="InvokeCode_6" Language="CSharp">
+                            <ui:InvokeCode ContinueOnError="{x:Null}" Code="iIndex = 0;&#xD;&#xA;for (int i = 0; i &lt; strarrSlackText.Length; i++)&#xD;&#xA;{&#x9;&#xD;&#xA;&#x9;if (strarrSlackText[i].Contains(strNumber))&#xD;&#xA;&#x9;{&#xD;&#xA;&#x9;&#x9;// Console.WriteLine(&quot;&quot; + iIndex);&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;iIndex++;&#xD;&#xA;}&#xD;&#xA;" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="1143,164" sap2010:WorkflowViewState.IdRef="InvokeCode_6" Language="CSharp">
                               <ui:InvokeCode.Arguments>
                                 <InOutArgument x:TypeArguments="s:String[]" x:Key="strarrSlackText">
                                   <CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_115">strarrSlackText</CSharpReference>
@@ -955,7 +955,7 @@
                                 </InArgument>
                               </ui:InvokeCode.Arguments>
                             </ui:InvokeCode>
-                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_DOUBLE" DisplayName="クリック 'link  詳細'" sap:VirtualizedContainerService.HintSize="1143,106" sap2010:WorkflowViewState.IdRef="Click_32" KeyModifiers="None" MouseButton="BTN_LEFT">
+                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="クリック 'link  詳細'" sap:VirtualizedContainerService.HintSize="1143,106" sap2010:WorkflowViewState.IdRef="Click_32" KeyModifiers="None" MouseButton="BTN_LEFT">
                               <ui:Click.CursorPosition>
                                 <ui:CursorPosition Position="Center">
                                   <ui:CursorPosition.OffsetX>
@@ -1860,7 +1860,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <Transition.To>
-                                      <State x:Name="__ReferenceID3" DisplayName="State - Add Calendar" sap:VirtualizedContainerService.HintSize="1153,4288" sap2010:WorkflowViewState.IdRef="State_6">
+                                      <State x:Name="__ReferenceID3" DisplayName="State - Add Calendar" sap:VirtualizedContainerService.HintSize="170,61" sap2010:WorkflowViewState.IdRef="State_6">
                                         <State.Entry>
                                           <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="1107,3901" sap2010:WorkflowViewState.IdRef="Sequence_46">
                                             <sap:WorkflowViewStateService.ViewState>
