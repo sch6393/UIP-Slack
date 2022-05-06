@@ -934,7 +934,7 @@
                       <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_115">bRequest &amp;&amp; bPolice</CSharpValue>
                     </Transition.Condition>
                     <Transition.To>
-                      <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Jobcan申請番号が数字ではない場合。" DisplayName="ステート - Police" sap:VirtualizedContainerService.HintSize="1231,3953" sap2010:WorkflowViewState.IdRef="State_7">
+                      <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Jobcan申請番号が数字ではない場合。" DisplayName="ステート - Police" sap:VirtualizedContainerService.HintSize="240,92" sap2010:WorkflowViewState.IdRef="State_7">
                         <State.Entry>
                           <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="1185,3562" sap2010:WorkflowViewState.IdRef="Sequence_71">
                             <sap:WorkflowViewStateService.ViewState>
@@ -942,7 +942,7 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:InvokeCode ContinueOnError="{x:Null}" Code="iIndex = 0;&#xD;&#xA;for (int i = 0; i &lt; strarrSlackText.Length; i++)&#xD;&#xA;{&#x9;&#xD;&#xA;&#x9;if (strarrSlackText[i].Contains(strNumber))&#xD;&#xA;&#x9;{&#xD;&#xA;&#x9;&#x9;// Console.WriteLine(&quot;&quot; + iIndex);&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;iIndex++;&#xD;&#xA;}&#xD;&#xA;" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="1143,164" sap2010:WorkflowViewState.IdRef="InvokeCode_6" Language="CSharp">
+                            <ui:InvokeCode ContinueOnError="{x:Null}" Code="iIndex = 0;&#xA;for (int i = 0; i &lt; strarrSlackText.Length; i++)&#xA;{&#x9;&#xA;&#x9;if (strarrSlackText[i].Contains(strNumber))&#xA;&#x9;{&#xA;&#x9;&#x9;// Console.WriteLine(&quot;&quot; + iIndex);&#xA;&#x9;&#x9;break;&#xA;&#x9;}&#xA;&#xA;&#x9;iIndex++;&#xA;}&#xA;" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="1143,164" sap2010:WorkflowViewState.IdRef="InvokeCode_6" Language="CSharp">
                               <ui:InvokeCode.Arguments>
                                 <InOutArgument x:TypeArguments="s:String[]" x:Key="strarrSlackText">
                                   <CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_115">strarrSlackText</CSharpReference>
@@ -1345,7 +1345,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <Transition.To>
-                              <State x:Name="__ReferenceID1" DisplayName="State - Data Scraping" sap:VirtualizedContainerService.HintSize="188,61" sap2010:WorkflowViewState.IdRef="State_5">
+                              <State x:Name="__ReferenceID1" DisplayName="State - Data Scraping" sap:VirtualizedContainerService.HintSize="1231,4520" sap2010:WorkflowViewState.IdRef="State_5">
                                 <State.Entry>
                                   <Sequence sap:VirtualizedContainerService.HintSize="1185,4160" sap2010:WorkflowViewState.IdRef="Sequence_7">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -1528,13 +1528,13 @@
                                                         </InArgument>
                                                       </If.Condition>
                                                       <If.Then>
-                                                        <Sequence sap:VirtualizedContainerService.HintSize="376,875" sap2010:WorkflowViewState.IdRef="Sequence_89">
+                                                        <Sequence sap:VirtualizedContainerService.HintSize="376,893" sap2010:WorkflowViewState.IdRef="Sequence_89">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="SendHotkey_47" Key="enter" KeyModifiers="None" SpecialKey="True">
+                                                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="ホットキーを押下" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="SendHotkey_47" Key="enter" KeyModifiers="None" SpecialKey="True">
                                                             <ui:SendHotkey.Target>
                                                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="28455cf3-4689-44b7-b357-82172d13580f">
                                                                 <ui:Target.TimeoutMS>
@@ -1792,7 +1792,7 @@
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                             </ui:CommentOut>
-                                            <ui:InvokeCode ContinueOnError="{x:Null}" Code="strTitle = strTitle.Substring(strTitle.IndexOf(&quot;】&quot;) + 1).Trim();&#xA;&#xA;// （2021.04.07）言語が違う場合、データ抽出が失敗するので使わない。&#xA;// strUrl = &quot;https://&quot; + strUrl;&#xA;&#xA;// （2021.11.09）警察依頼を警察コードの代わりにJCコードを使うように現行。&#xA;/*&#xA;bool bFlag = false;&#xA;strID = strID.Replace(&quot;ID：&quot;, &quot;&quot;);&#xA;&#xA;try&#xA;{&#xA;&#x9;int.Parse(strID);&#xA;&#x9;bFlag = true;&#xA;}&#xA;catch (Exception ex)&#xA;{&#xA;&#x9;bFlag = false;&#xA;}&#xA;&#xA;strTitle = strID + strTitle;&#xA;if (bFlag)&#xA;{&#xA;&#x9;strTitle = &quot;JC&quot; + strTitle;&#xA;}&#xA;*/&#xA;&#xA;// （2021.11.09）JCコードをParsingするために区分字を入れる。&#xA;// （2021.11.29）警察番号を処理。&#xA;if (bPolice)&#xA;{&#xA;&#x9;strTitle = &quot;JC&quot; + strPoliceNumber + &quot;_&quot; + strTitle;&#xA;}&#xA;else&#xA;{&#xA;&#x9;strTitle = &quot;JC&quot; + strNumber + &quot;_&quot; + strTitle;&#xA;}&#xA;&#xA;// string strtmp = DateTime.Parse(strDate, &quot;yyyyMMdd&quot;, null).AddDays(1).ToString();&#xA;// Console.WriteLine(&quot;&quot; + strtmp);&#xA;&#xA;for (int i = 0; i &lt; dtExtract.Rows.Count; i++)&#xA;{&#x9;&#xA;&#x9;// カレンダー日付&#xA;&#x9;if (dtExtract.Rows[i][0].ToString().Equals(&quot;完了希望日&quot;))&#xA;&#x9;{&#xA;&#x9;&#x9;strDate = dtExtract.Rows[i][1].ToString().Replace(&quot;/&quot;, &quot;&quot;);&#xA;&#x9;&#x9;return;&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;if (dtExtract.Rows[i][0].ToString().Equals(&quot;利用開始希望日&quot;))&#xA;&#x9;{&#xA;&#x9;&#x9;strDate = dtExtract.Rows[i][1].ToString().Replace(&quot;/&quot;, &quot;&quot;);&#xA;&#x9;&#x9;return;&#xA;&#x9;}&#xA;}&#xA;&#xA;strDate = DateTime.Now.ToString(&quot;yyyyMMdd&quot;);&#xA;" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="562,164" sap2010:WorkflowViewState.IdRef="InvokeCode_2" Language="CSharp">
+                                            <ui:InvokeCode ContinueOnError="{x:Null}" Code="strTitle = strTitle.Substring(strTitle.IndexOf(&quot;】&quot;) + 1).Trim();&#xA;&#xA;// （2021.04.07）言語が違う場合、データ抽出が失敗するので使わない。&#xA;// strUrl = &quot;https://&quot; + strUrl;&#xA;&#xA;// （2021.11.09）警察依頼を警察コードの代わりにJCコードを使うように現行。&#xA;/*&#xA;bool bFlag = false;&#xA;strID = strID.Replace(&quot;ID：&quot;, &quot;&quot;);&#xA;&#xA;try&#xA;{&#xA;&#x9;int.Parse(strID);&#xA;&#x9;bFlag = true;&#xA;}&#xA;catch (Exception ex)&#xA;{&#xA;&#x9;bFlag = false;&#xA;}&#xA;&#xA;strTitle = strID + strTitle;&#xA;if (bFlag)&#xA;{&#xA;&#x9;strTitle = &quot;JC&quot; + strTitle;&#xA;}&#xA;*/&#xA;&#xA;// （2021.11.09）JCコードをParsingするために区分字を入れる。&#xA;// （2021.11.29）警察番号を処理。&#xA;if (bPolice)&#xA;{&#xA;&#x9;strTitle = &quot;JC&quot; + strPoliceNumber + &quot;_&quot; + strTitle;&#xA;}&#xA;else&#xA;{&#xA;&#x9;strTitle = &quot;JC&quot; + strNumber + &quot;_&quot; + strTitle;&#xA;}&#xA;&#xA;// string strtmp = DateTime.Parse(strDate, &quot;yyyyMMdd&quot;, null).AddDays(1).ToString();&#xA;// Console.WriteLine(&quot;&quot; + strtmp);&#xA;&#xA;for (int i = 0; i &lt; dtExtract.Rows.Count; i++)&#xA;{&#x9;&#xA;&#x9;// カレンダー日付&#xA;&#x9;if (dtExtract.Rows[i][0].ToString().Equals(&quot;完了希望日&quot;))&#xA;&#x9;{&#xA;&#x9;&#x9;strDate = dtExtract.Rows[i][1].ToString().Replace(&quot;/&quot;, &quot;&quot;);&#xA;&#x9;&#x9;return;&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;if (dtExtract.Rows[i][0].ToString().Equals(&quot;利用開始希望日&quot;))&#xA;&#x9;{&#xA;&#x9;&#x9;strDate = dtExtract.Rows[i][1].ToString().Replace(&quot;/&quot;, &quot;&quot;);&#xA;&#x9;&#x9;return;&#xA;&#x9;}&#xA;}&#xA;&#xA;strDate = DateTime.Now.ToString(&quot;yyyyMMdd&quot;);&#xA;" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="1067,164" sap2010:WorkflowViewState.IdRef="InvokeCode_2" Language="CSharp">
                                               <ui:InvokeCode.Arguments>
                                                 <InArgument x:TypeArguments="sd:DataTable" x:Key="dtExtract">
                                                   <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">dtExtract</CSharpValue>
@@ -1817,7 +1817,7 @@
                                                 </InArgument>
                                               </ui:InvokeCode.Arguments>
                                             </ui:InvokeCode>
-                                            <Assign sap:VirtualizedContainerService.HintSize="562,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                            <Assign sap:VirtualizedContainerService.HintSize="1067,60" sap2010:WorkflowViewState.IdRef="Assign_1">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:String">
                                                   <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_30">strURLCalendar</CSharpReference>
@@ -1825,11 +1825,11 @@
                                               </Assign.To>
                                               <Assign.Value>
                                                 <InArgument x:TypeArguments="x:String">
-                                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">"https://calendar.google.com/calendar/u/0/r/eventedit?overrides=%5Bnull%2Cnull%2C%22" + strDate + "%22%2C%22" + DateTime.ParseExact(strDate, "yyyyMMdd", null).AddDays(1).ToString("yyyyMMdd") + "%22%2C%22c29uX2NoYW5naGFuQGZrLmNvY29uZS5jby5qcA%22%2Cnull%2Cnull%2C%5B%5D%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2C%5B%5D%2Cnull%2C%5B%5D%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2C%5B%5D%5D&amp;tab=cc";</CSharpValue>
+                                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_182">"https://calendar.google.com/calendar/u/0/r/eventedit?overrides=%5Bnull%2Cnull%2C%22" + strDate + "%22%2C%22" + DateTime.ParseExact(strDate, "yyyyMMdd", null).AddDays(1).ToString("yyyyMMdd") + "%22%2C%22c29uX2NoYW5naGFuQGNvY29uZXYuY28uanA%22%2Cnull%2Cnull%2C%5B%5D%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2C%5B%5D%2Cnull%2C%5B%5D%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2C%5B%5D%5D&amp;tab=cc";</CSharpValue>
                                                 </InArgument>
                                               </Assign.Value>
                                             </Assign>
-                                            <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="562,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
+                                            <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="1067,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
                                           </Sequence>
                                         </ActivityAction>
                                       </ui:OpenBrowser.Body>
@@ -1862,19 +1862,19 @@
                                     <Transition.To>
                                       <State x:Name="__ReferenceID3" DisplayName="State - Add Calendar" sap:VirtualizedContainerService.HintSize="170,61" sap2010:WorkflowViewState.IdRef="State_6">
                                         <State.Entry>
-                                          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="1107,3901" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                                          <Sequence DisplayName="シーケンス" sap:VirtualizedContainerService.HintSize="1107,3941" sap2010:WorkflowViewState.IdRef="Sequence_46">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1065,3809" sap2010:WorkflowViewState.IdRef="OpenBrowser_4">
+                                            <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1065,3849" sap2010:WorkflowViewState.IdRef="OpenBrowser_4">
                                               <ui:OpenBrowser.Body>
                                                 <ActivityAction x:TypeArguments="x:Object">
                                                   <ActivityAction.Argument>
                                                     <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                                   </ActivityAction.Argument>
-                                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1031,3708" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1031,3748" sap2010:WorkflowViewState.IdRef="Sequence_45">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2100,7 +2100,7 @@
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
                                                     </Delay>
-                                                    <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'INPUT'" sap:VirtualizedContainerService.HintSize="989,134" sap2010:WorkflowViewState.IdRef="SetValue_5">
+                                                    <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'INPUT'" sap:VirtualizedContainerService.HintSize="989,154" sap2010:WorkflowViewState.IdRef="SetValue_5">
                                                       <ui:SetValue.Target>
                                                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="19597b2b-1c9e-41b7-bfc9-2521fdded900" InformativeScreenshot="297482a6c179bfecaf269e11574563fb" Selector="&lt;html app='chrome.exe' title='fk.cocone.co.jp - カレンダー - 予定の詳細' /&gt;&lt;webctrl tag='INPUT' type='text' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;label&amp;gt;div&amp;gt;div&amp;gt;input' /&gt;">
                                                           <ui:Target.TimeoutMS>
@@ -2153,7 +2153,7 @@
                                                         </ui:Target>
                                                       </ui:SendHotkey.Target>
                                                     </ui:SendHotkey>
-                                                    <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'DIV'" sap:VirtualizedContainerService.HintSize="989,134" sap2010:WorkflowViewState.IdRef="SetValue_6">
+                                                    <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'DIV'" sap:VirtualizedContainerService.HintSize="989,154" sap2010:WorkflowViewState.IdRef="SetValue_6">
                                                       <ui:SetValue.Target>
                                                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="660a19a8-8e9a-4ed7-8c7a-791bcefa2a73" InformativeScreenshot="91a9a57695d78cd1dedb79d14f16d9b7" Selector="&lt;html app='chrome.exe' title='fk.cocone.co.jp - カレンダー - 予定の詳細' /&gt;&lt;webctrl aria-role='textbox' tag='DIV' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' /&gt;">
                                                           <ui:Target.TimeoutMS>
